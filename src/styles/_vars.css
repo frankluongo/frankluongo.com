@@ -1,0 +1,82 @@
+:root {
+  /* ? Colors */
+  /* ============================================================= */
+
+  /* * Colors: Brand */
+  --color-blue: #16769b;
+  --color-green: #0bc17f;
+  --color-red: #fc3b12;
+  --color-teal: #1dacc0;
+  --color-yellow: #fec61d;
+
+  /* * Colors: Surfaces */
+  --color-black: #272321;
+  --color-gray-1: #f5f5f5;
+  --color-gray-2: #cbc9c8;
+  --color-gray-3: #8b8989;
+  --color-gray-4: #626160;
+  --color-gray-5: #413f3e;
+  --color-white: #ffffff;
+
+  /* * Colors: Gradients */
+  --color-gradient-grayscale: linear-gradient(
+    180deg,
+    var(--color-gray-1) 0%,
+    var(--color-white) 100%
+  );
+  --color-gradient-darkness: linear-gradient(
+    180deg,
+    var(--color-gray-5) 0%,
+    var(--color-black) 100%
+  );
+  --color-gradient-blue-green: linear-gradient(
+    180deg,
+    var(--color-blue) 0%,
+    var(--color-green) 100%
+  );
+  --color-gradient-red-yellow: linear-gradient(
+    180deg,
+    var(--color-red) 0%,
+    var(--color-yellow) 100%
+  );
+  --color-gradient-teal-blue: linear-gradient(
+    180deg,
+    var(--color-teal) 0%,
+    var(--color-blue) 100%
+  );
+
+  /* ? Settings */
+  /* ============================================================= */
+  --border-radius-default: 0.25rem;
+  --box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  --header-height: 3rem;
+  --max-width: 1200px;
+
+  /* ? Typography */
+  /* ============================================================= */
+  --font-primary: "Silka Web", sans-serif;
+  /*
+  font: font-style font-variant font-weight font-size/line-height font-family
+  */
+  --font-h1: normal 900 2rem/1.1 var(--font-primary);
+  --font-h2: normal 900 1.5rem/1.1 var(--font-primary);
+  --font-h3: normal 900 1.125rem/1.1 var(--font-primary);
+  --font-h4: normal 900 1rem/1.1 var(--font-primary);
+  --font-h5: normal 900 0.875rem/1.1 var(--font-primary);
+  --font-h6: normal 900 0.75rem/1.1 var(--font-primary);
+  --font-paragraph: normal 400 0.875rem/1.618 var(--font-primary);
+  --font-small: normal 400 0.625rem/1.618 var(--font-primary);
+
+  /* ? Theme */
+  /* ============================================================= */
+  /* * Theme: Colors */
+  --theme-color-link-alternate: var(--color-teal);
+  --theme-color-link-default: var(--color-blue);
+  --theme-color-subheading-alternate: var(--color-gray-1);
+  --theme-color-subheading-default: var(--color-gray-3);
+  --theme-color-text-alternate: var(--color-white);
+  --theme-color-text-default: var(--color-black);
+  --theme-color-border-alternate: var(--color-gray-1);
+  --theme-color-border-default: var(--color-gray-5);
+  --theme-color-background-default: var(--color-white);
+}

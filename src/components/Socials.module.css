@@ -1,0 +1,30 @@
+.Socials {
+  --icon-size: 2rem;
+
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.Social {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.Social svg {
+  height: var(--icon-size);
+
+  fill: currentColor;
+}
+
+@media (min-width: 1000px) {
+  .Socials {
+    --icon-size: 1rem;
+  }
+
+  [data-app-header] .Socials {
+    margin-inline-start: auto;
+  }
+}

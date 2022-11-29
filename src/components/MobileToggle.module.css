@@ -1,0 +1,28 @@
+.MobileToggle {
+  align-items: center;
+  display: inline-flex;
+  gap: 2px;
+  height: 2rem;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0;
+  width: 4rem;
+
+  color: var(--theme-color-text-alternate);
+  font: var(--font-h6);
+  text-transform: uppercase;
+
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid var(--theme-color-border-alternate);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.MobileToggle[aria-expanded="false"] svg {
+  fill: var(--theme-color-text-alternate);
+}
+
+.MobileToggle[aria-expanded="true"] svg {
+  fill: var(--theme-color-text-alternate);
+}

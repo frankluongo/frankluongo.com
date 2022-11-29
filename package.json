@@ -16,11 +16,13 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
+    "framer-motion": "^7.6.15",
     "gatsby": "^5.2.0",
     "gatsby-plugin-google-analytics": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-manifest": "^5.2.0",
     "gatsby-plugin-mdx": "^5.2.0",
+    "gatsby-plugin-module-resolver": "^1.0.3",
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-plugin-sitemap": "^6.2.0",
     "gatsby-source-filesystem": "^5.2.0",

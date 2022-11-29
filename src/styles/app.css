@@ -1,0 +1,45 @@
+@import "./_reset.css";
+@import "./_imports.css";
+@import "./_vars.css";
+@import "./_typography.css";
+
+/* 
+  ? data-* attributes
+  * =================================================================
+*/
+
+[data-a11y-hidden] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+[data-container] {
+  margin-inline: auto;
+  max-width: var(--max-width);
+  width: 100%;
+  padding-inline: 1rem;
+}
+
+[data-unstyled="list"] {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@media (max-width: 999px) {
+  [data-display="desktopOnly"] {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  [data-display="mobileOnly"] {
+    display: none;
+  }
+}

@@ -1,0 +1,48 @@
+.MobileMenu {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: var(--header-height);
+  z-index: 9;
+
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 1rem;
+  padding-block-start: 2rem;
+  padding-inline: 1rem;
+  width: 100%;
+
+  background-color: var(--theme-color-background-default);
+}
+
+.MobileMenu a {
+  color: var(--theme-color-text-default);
+}
+
+.Link {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  color: var(--theme-color-text-default);
+  text-decoration: none;
+}
+
+.LinkDescription {
+  font: var(--font-paragraph);
+  color: var(--theme-color-subheading-default);
+}
+
+.LinkTitle {
+  font: var(--font-h2);
+  text-transform: uppercase;
+}
+
+.Links {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+}
