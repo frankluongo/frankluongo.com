@@ -22,4 +22,5 @@ h6 {
 }
 p {
   font: var(--font-paragraph);
+  line-height: 1.618;
 }

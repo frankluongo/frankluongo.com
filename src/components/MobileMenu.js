@@ -2,13 +2,14 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMobileCtx } from "../presentation/mobileNav";
 
-import { links } from "../lib/links";
+import { useNav } from "#lib/useNav";
 
 import * as css from "./MobileMenu.module.css";
 import { Link } from "gatsby";
 import { Socials } from "./Socials";
 
 export const MobileMenu = () => {
+  const links = useNav();
   const { navOpen } = useMobileCtx();
 
   const animation = {
@@ -27,12 +28,10 @@ export const MobileMenu = () => {
         >
           <ul className={css.Links} data-unstyled="list">
             {links.map((link) => (
-              <li key={link.url}>
-                <Link className={css.Link} to={link.url}>
+              <li key={link.id}>
+                <Link className={css.Link} to={link.slug}>
                   <div className={css.LinkTitle}>{link.titleMobile}</div>
-                  <span className={css.LinkDescription}>
-                    {link.description}
-                  </span>
+                  <span className={css.LinkDescription}>{link.content}</span>
                 </Link>
               </li>
             ))}

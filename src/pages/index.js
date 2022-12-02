@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const TITLE = "Home Page";
+const TITLE = "Home Page | Frank Luongo Design Co.";
 
 const IndexPage = () => {
   return (

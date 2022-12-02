@@ -3,21 +3,22 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { links } from "#lib/links";
+import { useNav } from "#lib/useNav";
 
 import * as css from "./DesktopMenu.module.css";
 
 export const DesktopMenu = () => {
+  const links = useNav();
   return (
     <ul className={css.Links} data-display="desktopOnly" data-unstyled="list">
       {links.map((link) => (
-        <MenuLink key={`${link.url}-desktop`} {...link} />
+        <MenuLink key={`${link.id}-desktop`} {...link} />
       ))}
     </ul>
   );
 };
 
-function MenuLink({ description, url, titleDesktop }) {
+function MenuLink({ content, slug, title }) {
   const [active, setActive] = useState(false);
 
   const animation = {
@@ -31,19 +32,20 @@ function MenuLink({ description, url, titleDesktop }) {
   };
 
   return (
-    <li
-      className={css.ListItem}
-      key={`${url}-desktop`}
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
-      <Link className={css.Link} to={url}>
-        {titleDesktop}
+    <li className={css.ListItem}>
+      <Link
+        className={css.Link}
+        to={slug}
+        onClick={() => setActive(false)}
+        onMouseEnter={() => setActive(true)}
+        onMouseLeave={() => setActive(false)}
+      >
+        {title}
       </Link>
       <AnimatePresence>
         {active && (
           <motion.article {...animation} className={css.Description}>
-            {description}
+            {content}
           </motion.article>
         )}
       </AnimatePresence>

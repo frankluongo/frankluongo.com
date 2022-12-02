@@ -1,18 +1,42 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
   siteMetadata: {
     title: `frankluongo.com-v5`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://frankluongo.com`,
   },
   plugins: [
+    // Filesystem Access (Images)
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    // Filesystem Access (Pages)
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    // Google Analytics
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "UA-120921374-1",
       },
     },
+    // Image
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-module-resolver",
@@ -30,31 +54,42 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-sitemap",
+    // Manifest
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
       },
     },
+    // Markdown Remark
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
+    // MDX
     "gatsby-plugin-mdx",
+    // Notion API
+    {
+      resolve: `gatsby-source-notion-api`,
+      options: {
+        token: process.env.NOTION_KEY,
+        databaseId: process.env.NOTION_DATABASE_ID,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true,
+      },
+    },
+    // Sharp
     "gatsby-plugin-sharp",
+    // Sitemap
+    "gatsby-plugin-sitemap",
+    // Transformer Sharp
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
   ],
 };

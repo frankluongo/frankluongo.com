@@ -1,10 +1,11 @@
 import React from "react";
 
-import { socials } from "../lib/socials";
+import { useSocials } from "../lib/useSocials";
 
 import * as css from "./Socials.module.css";
 
 export const Socials = (props) => {
+  const socials = useSocials();
   const Icons = {
     envelope: Envelope,
     github: GitHub,
@@ -14,15 +15,15 @@ export const Socials = (props) => {
   return (
     <ul className={css.Socials} data-unstyled="list" {...props}>
       {socials.map((social) => {
-        const Icon = Icons[social.id];
+        const Icon = Icons[social.slug];
         return (
-          <li key={social.url}>
+          <li key={social.id}>
             <a
               className={css.Social}
-              href={social.url}
+              href={social.URL}
               target="_blank"
               rel="noopener noreferrer"
-              title={social.title}
+              title={social.content}
             >
               <Icon />
             </a>

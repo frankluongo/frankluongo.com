@@ -50,6 +50,7 @@
   --border-radius-default: 0.25rem;
   --box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   --header-height: 3rem;
+  --blog-max-width: 720px;
   --max-width: 1200px;
 
   /* ? Typography */
@@ -78,5 +79,19 @@
   --theme-color-text-default: var(--color-black);
   --theme-color-border-alternate: var(--color-gray-1);
   --theme-color-border-default: var(--color-gray-5);
+  --theme-color-border-light: var(--color-gray-2);
   --theme-color-background-default: var(--color-white);
+}
+
+@media (min-width: 500px) {
+  :root {
+    --font-h1: normal 900 3rem/1.1 var(--font-primary);
+    --font-h2: normal 900 1.75rem/1.1 var(--font-primary);
+    --font-h3: normal 900 1.5rem/1.1 var(--font-primary);
+    --font-h4: normal 900 1.125rem/1.1 var(--font-primary);
+    --font-h5: normal 900 1rem/1.1 var(--font-primary);
+    --font-h6: normal 900 0.875rem/1.1 var(--font-primary);
+    --font-paragraph: normal 400 1rem/1.618 var(--font-primary);
+    --font-small: normal 400 0.625rem/1.618 var(--font-primary);
+  }
 }

@@ -25,6 +25,10 @@
   padding-inline: 1rem;
 }
 
+[data-container="blog"] {
+  max-width: var(--blog-max-width);
+}
+
 [data-unstyled="list"] {
   margin: 0;
   padding: 0;

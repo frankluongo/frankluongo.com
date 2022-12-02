@@ -15,7 +15,7 @@
   appearance: none;
   background-color: transparent;
   border: 1px solid var(--theme-color-border-alternate);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius-default);
   cursor: pointer;
 }
 
