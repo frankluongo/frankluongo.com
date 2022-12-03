@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 export function useHome() {
   const data = useStaticQuery(
@@ -13,7 +14,6 @@ export function useHome() {
           }
         ) {
           nodes {
-            title
             properties {
               slug {
                 value
@@ -21,13 +21,24 @@ export function useHome() {
               content {
                 value
               }
+              imagePath {
+                value
+              }
+              type {
+                value {
+                  name
+                }
+              }
             }
             id
-            json
+            title
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
     `
   );
-  return data.allNotion.nodes;
+  return objectifyNotionData(data.allNotion.nodes);
 }

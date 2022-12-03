@@ -1,0 +1,35 @@
+.Button {
+  --padding: 1rem 1.5rem;
+  --background: var(--color-white);
+  --color: var(--color-teal);
+
+  display: inline-block;
+  padding: var(--padding);
+
+  color: var(--color);
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+
+  background: var(--background);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.Button:hover,
+.Button:focus {
+  --background: var(--color-blue);
+  --color: var(--color-white);
+}
+
+.Button[data-theme="dark"] {
+  --background: var(--color-gradient-teal-blue);
+  --color: var(--color-white);
+}
+
+.Button[data-theme="dark"]:hover,
+.Button[data-theme="dark"]:focus {
+  transform: scale(1.1);
+}

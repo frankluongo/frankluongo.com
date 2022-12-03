@@ -1,7 +1,7 @@
 .Description {
   position: absolute;
   top: 100%;
-  z-index: 2;
+  z-index: var(--z-desktop-menu);
 
   padding: 0.5rem;
   width: 12rem;

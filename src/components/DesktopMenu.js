@@ -10,7 +10,7 @@ import * as css from "./DesktopMenu.module.css";
 export const DesktopMenu = () => {
   const links = useNav();
   return (
-    <ul className={css.Links} data-display="desktopOnly" data-unstyled="list">
+    <ul className={css.Links} data-display="largeUp" data-unstyled="list">
       {links.map((link) => (
         <MenuLink key={`${link.id}-desktop`} {...link} />
       ))}

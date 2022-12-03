@@ -13,7 +13,7 @@ export const Header = () => {
       <section className={css.Container} data-container>
         <Logo type="alternate" />
         <DesktopMenu />
-        <Socials data-display="desktopOnly" />
+        <Socials data-display="largeUp" />
         <MobileToggle />
       </section>
     </header>

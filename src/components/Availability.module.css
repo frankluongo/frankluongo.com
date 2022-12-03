@@ -1,0 +1,21 @@
+.Availability {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+
+  font: var(--font-smaller);
+}
+
+.Availability div {
+  align-items: center;
+  display: flex;
+  height: 0.875rem;
+  justify-content: center;
+  width: 0.875rem;
+}
+
+.Availability svg {
+  height: 0.625rem;
+  width: 0.625rem;
+}

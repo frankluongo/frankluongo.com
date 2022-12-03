@@ -47,10 +47,11 @@
 
   /* ? Settings */
   /* ============================================================= */
+  --blog-max-width: 720px;
   --border-radius-default: 0.25rem;
   --box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  --drop-shadow: drop-shadow(0px 1px 4px rgba(39, 35, 33, 0.1));
   --header-height: 3rem;
-  --blog-max-width: 720px;
   --max-width: 1200px;
 
   /* ? Typography */
@@ -66,21 +67,28 @@
   --font-h5: normal 900 0.875rem/1.1 var(--font-primary);
   --font-h6: normal 900 0.75rem/1.1 var(--font-primary);
   --font-paragraph: normal 400 0.875rem/1.618 var(--font-primary);
+  --font-smaller: normal 400 0.875rem/1.618 var(--font-primary);
   --font-small: normal 400 0.625rem/1.618 var(--font-primary);
 
   /* ? Theme */
   /* ============================================================= */
   /* * Theme: Colors */
+  --theme-color-background-default: var(--color-white);
+  --theme-color-border-alternate: var(--color-gray-1);
+  --theme-color-border-default: var(--color-gray-5);
+  --theme-color-border-light: var(--color-gray-2);
   --theme-color-link-alternate: var(--color-teal);
   --theme-color-link-default: var(--color-blue);
   --theme-color-subheading-alternate: var(--color-gray-1);
   --theme-color-subheading-default: var(--color-gray-3);
   --theme-color-text-alternate: var(--color-white);
   --theme-color-text-default: var(--color-black);
-  --theme-color-border-alternate: var(--color-gray-1);
-  --theme-color-border-default: var(--color-gray-5);
-  --theme-color-border-light: var(--color-gray-2);
-  --theme-color-background-default: var(--color-white);
+
+  /* ? Z-Index */
+  /* ============================================================= */
+  --z-header: 4;
+  --z-mobile-menu: 3;
+  --z-desktop-menu: 2;
 }
 
 @media (min-width: 500px) {

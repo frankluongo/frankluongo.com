@@ -1,0 +1,99 @@
+.Card {
+  --img-border-radius: 0.25rem;
+  --max-card-width: 13.5rem;
+  --vertical-spacing: 1rem;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  background-color: var(--theme-color-background-default);
+  border-radius: 0.25rem 0.25rem 1rem 0.25rem;
+  filter: var(--drop-shadow);
+  transition: transform 150ms ease-in-out;
+}
+
+.Card:hover,
+.Card:focus {
+  transform: scale(1.1) rotate(-1deg);
+  z-index: 2;
+}
+
+.Link {
+  --gap: 0.5rem;
+  --padding: 0.5rem;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--padding);
+
+  color: var(--theme-color-text-default);
+  text-decoration: none;
+}
+
+.Logo {
+  --logo-size: 1.5rem;
+
+  height: var(--logo-size);
+  margin-right: 0.5rem;
+  width: var(--logo-size);
+
+  border-radius: var(--img-border-radius);
+}
+
+.Thumbnail {
+  --thumbnail-size: 8rem;
+
+  height: var(--thumbnail-size);
+
+  background-color: var(--color-gray-1);
+  border-radius: var(--img-border-radius);
+}
+
+.Icon {
+  --icon-size: 0.75rem;
+
+  height: var(--icon-size);
+}
+
+.Title {
+  display: flex;
+  gap: 0.5rem;
+
+  font: var(--font-smaller);
+}
+
+@media (max-width: 699px) {
+  .Title {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 700px) {
+  .Header {
+    align-items: center;
+    display: flex;
+  }
+
+  .Link {
+    --padding: 1rem;
+  }
+
+  .Thumbnail {
+    --thumbnail-size: 12rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .Link {
+    --gap: 1rem;
+  }
+
+  .Thumbnail {
+    --thumbnail-size: 10rem;
+  }
+}

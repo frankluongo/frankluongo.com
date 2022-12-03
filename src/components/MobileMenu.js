@@ -24,7 +24,7 @@ export const MobileMenu = () => {
         <motion.nav
           className={css.MobileMenu}
           {...animation}
-          data-display="mobileOnly"
+          data-display="largeDown"
         >
           <ul className={css.Links} data-unstyled="list">
             {links.map((link) => (

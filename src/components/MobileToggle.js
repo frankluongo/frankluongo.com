@@ -18,7 +18,7 @@ export const MobileToggle = () => {
       <button
         aria-expanded={navOpen}
         className={css.MobileToggle}
-        data-display="mobileOnly"
+        data-display="largeDown"
         onClick={onToggle}
       >
         <MobileIcon />

@@ -4,7 +4,7 @@
   position: fixed;
   right: 0;
   top: var(--header-height);
-  z-index: 9;
+  z-index: var(--z-mobile-menu);
 
   display: flex;
   flex-direction: column;

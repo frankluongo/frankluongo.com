@@ -24,3 +24,7 @@ p {
   font: var(--font-paragraph);
   line-height: 1.618;
 }
+
+small {
+  font: var(--font-small);
+}
