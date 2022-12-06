@@ -7,16 +7,20 @@ const icons = {
   checkmark: Checkmark,
 };
 
-export const Availability = () => {
+export const Availability = ({ extraClasses }) => {
   const { availability: avail } = useMeta();
   const status = avail.title;
   const Icon = icons[avail.properties.content.value];
   return (
-    <article className={css.Availability}>
+    <article className={`${css.Availability} ${extraClasses}`}>
       <Icon />
       {status}
     </article>
   );
+};
+
+Availability.defaultProps = {
+  extraClasses: "justify-center",
 };
 
 function Checkmark() {

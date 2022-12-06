@@ -38,22 +38,6 @@ module.exports = {
     },
     // Image
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-module-resolver",
-      options: {
-        root: "./src",
-        aliases: {
-          "#components": "./components",
-          "#lib": "./lib",
-          "#presentation": "./presentation",
-          "#styles": "./styles",
-          static: {
-            root: "./public", // <- will used as this alias' root dir
-            alias: "./static", // <- will become ./public/static
-          },
-        },
-      },
-    },
     // Manifest
     {
       resolve: "gatsby-plugin-manifest",
@@ -75,6 +59,23 @@ module.exports = {
     },
     // MDX
     "gatsby-plugin-mdx",
+    // Module Resolver
+    {
+      resolve: "gatsby-plugin-module-resolver",
+      options: {
+        root: "./src",
+        aliases: {
+          "#components": "./components",
+          "#lib": "./lib",
+          "#presentation": "./presentation",
+          "#styles": "./styles",
+          static: {
+            root: "./public", // <- will used as this alias' root dir
+            alias: "./static", // <- will become ./public/static
+          },
+        },
+      },
+    },
     // Notion API
     {
       resolve: `gatsby-source-notion-api`,

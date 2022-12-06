@@ -10,12 +10,13 @@ import "highlight.js/styles/github.css";
 
 import { BlogPost } from "../components/BlogPost";
 
-import * as style from "./post.module.css";
 import "#styles/hljs.css";
 
 const Post = ({ data }) => {
   const __html = data.markdownRemark.html;
   const langs = useMemo(() => ({ css, html, javascript }), []);
+
+  const rawTitle = data.notion.title.replaceAll("**", "");
 
   useEffect(() => {
     const codeBlocks = document.querySelectorAll("code[class]");
@@ -27,9 +28,9 @@ const Post = ({ data }) => {
   }, [langs]);
 
   return (
-    <div className={style.PostContent} data-container="blog">
+    <div className="container container--blog page-body flex flex-direction:column gap:2">
       <header>
-        <h1>{data.notion.title}</h1>
+        <h1>{rawTitle}</h1>
       </header>
       <BlogPost dangerouslySetInnerHTML={{ __html }} />
     </div>

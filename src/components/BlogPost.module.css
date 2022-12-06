@@ -10,6 +10,21 @@
   text-decoration: none;
 }
 
+.BlogPost ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding-inline-start: 1.5rem;
+
+  list-style: disc;
+}
+
+.BlogPost * + h3,
+.BlogPost * + h4 {
+  margin-top: 1rem;
+}
+
 html .BlogPost pre code {
   padding: 2rem;
 

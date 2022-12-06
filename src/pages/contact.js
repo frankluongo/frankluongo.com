@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { useBlogPage } from "#lib/useBlogPage";
+import { useContactPage } from "#lib/useContactPage";
 import { useMeta } from "#lib/useMeta";
 
 import { mdToHTML } from "../helpers/mdToHTML";
@@ -8,12 +8,14 @@ import { mdToHTML } from "../helpers/mdToHTML";
 import { Availability } from "../components/Availability";
 import { Button } from "../components/Button";
 import { Hero } from "../components/Hero";
-import { PostsPreview } from "../components/PostsPreview";
+import { Markup } from "../components/Markup";
+import { Likes } from "../components/Likes";
+import { Socials } from "../components/Socials";
 
-const TITLE = "Blog | Frank Luongo Design Co.";
+const TITLE = "Contact Me | Frank Luongo Design Co.";
 
-const BlogPage = () => {
-  const data = useBlogPage();
+const ContactPage = () => {
+  const data = useContactPage();
   const { businessEmail } = useMeta();
 
   const __html = mdToHTML(data.heroHeadline.properties.content.value);
@@ -23,7 +25,7 @@ const BlogPage = () => {
       <h1 data-a11y-hidden>{TITLE}</h1>
       <Hero
         path={data.heroImage.properties.imagePath.value}
-        alt="Blog Page"
+        alt="Contact Page"
         extraStyles={{ heroContent: "color-white" }}
       >
         <h2 dangerouslySetInnerHTML={{ __html }} />
@@ -35,13 +37,25 @@ const BlogPage = () => {
           </Button>
         </div>
       </Hero>
-      <section className="container page-body flex flex-direction:column gap:3">
-        <PostsPreview />
+      <section className="container page-body grid gap:2 grid:auto-fit/1fr">
+        <div className="flex flex-direction:column gap:1">
+          <h3>{data.aboutMeHeadline.properties.content.value}</h3>
+          <Markup
+            Tag="article"
+            content={data.aboutMeText.childMarkdownRemark.html}
+          />
+        </div>
+        <div className="flex flex-direction:column gap:1">
+          <h3>{data.highlightsHeadline.properties.content.value}</h3>
+          <Likes />
+          <h3>Where to find me</h3>
+          <Socials type="cards" />
+        </div>
       </section>
     </>
   );
 };
 
-export default BlogPage;
+export default ContactPage;
 
 export const Head = () => <title>{TITLE}</title>;

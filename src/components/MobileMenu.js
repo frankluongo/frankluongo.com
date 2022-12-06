@@ -26,7 +26,7 @@ export const MobileMenu = () => {
           {...animation}
           data-display="largeDown"
         >
-          <ul className={css.Links} data-unstyled="list">
+          <ul className={css.Links}>
             {links.map((link) => (
               <li key={link.id}>
                 <Link className={css.Link} to={link.slug}>
@@ -36,7 +36,7 @@ export const MobileMenu = () => {
               </li>
             ))}
           </ul>
-          <Socials />
+          <Socials type="cards" />
         </motion.nav>
       )}
     </AnimatePresence>

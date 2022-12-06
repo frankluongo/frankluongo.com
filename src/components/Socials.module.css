@@ -4,13 +4,47 @@
   align-items: center;
   display: flex;
   gap: 1rem;
-  justify-content: center;
+}
+
+.Socials[data-type="cards"] {
+  --icon-size: 1.5rem;
 }
 
 .Social {
   align-items: center;
   display: flex;
   justify-content: center;
+  gap: 0.5rem;
+
+  text-decoration: none;
+}
+
+.Socials[data-type="cards"] .Social {
+  --padding: 1rem;
+  --text-color: var(--theme-color-link-default);
+  --icon-color: var(--color-gradient-teal-blue);
+
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+
+  color: var(--text-color);
+  letter-spacing: 1px;
+
+  background-color: var(--theme-color-background-default);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.Socials[data-type="cards"] .Social:hover,
+.Socials[data-type="cards"] .Social:focus {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.Socials[data-type="cards"] .Social:active {
+  transform: scale(0.9) rotate(2deg);
 }
 
 .Social svg {

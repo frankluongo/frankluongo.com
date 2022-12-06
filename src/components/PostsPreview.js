@@ -12,7 +12,7 @@ export const PostsPreview = () => {
       {posts.map((post) => (
         <li key={post.id}>
           <Link className={css.Link} to={`/blog/${post.slug}`}>
-            {post.title}
+            {post.title.replaceAll("**", "")}
           </Link>
         </li>
       ))}

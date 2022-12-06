@@ -1,57 +1,48 @@
-@import "./_reset.css";
-@import "./_imports.css";
-@import "./_vars.css";
-@import "./_typography.css";
-
-@import "./_helpers.css";
-
 /* 
-  ? data-* attributes
+  ? SECTION 01: Base
+  Reset and import CSS
   * =================================================================
 */
 
-[data-a11y-hidden] {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+@import "./base/imports.css";
+@import "./base/reset.css";
 
-[data-container] {
-  margin-inline: auto;
-  max-width: var(--max-width);
-  width: 100%;
-  padding-inline: 1rem;
-}
+/* 
+  ? SECTION 02: Variables
+  * =================================================================
+*/
 
-[data-container="blog"] {
-  max-width: var(--blog-max-width);
-}
+@import "./variables/variables.css";
 
-[data-unstyled="list"] {
-  margin: 0;
-  padding: 0;
+/* 
+  ? SECTION 03: Globals
+  Media queries, typography, and any element-specific styling
+  * =================================================================
+*/
 
-  list-style: none;
-}
+@import "./global/media-queries.css";
+@import "./global/typography.css";
 
-@media (max-width: 699px) {
-  [data-display="mediumUp"] {
-    display: none;
-  }
-}
+/* 
+  ? SECTION 04: Appearance
+  Classes for certain, global elements like lists
+  * =================================================================
+*/
 
-@media (max-width: 999px) {
-  [data-display="largeUp"] {
-    display: none;
-  }
-}
+@import "./appearance/lists.css";
 
-@media (min-width: 1000px) {
-  [data-display="largeDown"] {
-    display: none;
-  }
-}
+/* 
+  ? SECTION 05: Helpers
+  Helper classes for all those annoying little things
+  * =================================================================
+*/
+
+@import "./helpers/a11y.css";
+
+/* 
+  ? SECTION 05: Grid
+  All things grid and flex related
+  * =================================================================
+*/
+
+@import "./grid/grid.css";

@@ -4,7 +4,7 @@ import { useSocials } from "../lib/useSocials";
 
 import * as css from "./Socials.module.css";
 
-export const Socials = (props) => {
+export const Socials = ({ type, ...props }) => {
   const socials = useSocials();
   const Icons = {
     envelope: Envelope,
@@ -13,7 +13,7 @@ export const Socials = (props) => {
   };
 
   return (
-    <ul className={css.Socials} data-unstyled="list" {...props}>
+    <ul className={css.Socials} data-type={type} {...props}>
       {socials.map((social) => {
         const Icon = Icons[social.slug];
         return (
@@ -26,6 +26,7 @@ export const Socials = (props) => {
               title={social.content}
             >
               <Icon />
+              {type === "cards" && <span className="h6">{social.title}</span>}
             </a>
           </li>
         );

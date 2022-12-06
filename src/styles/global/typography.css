@@ -1,0 +1,70 @@
+html {
+  font-family: var(--font-primary);
+
+  color: var(--theme-color-text-default);
+}
+
+h1,
+.h1 {
+  font: var(--font-h1);
+}
+h2,
+.h2 {
+  font: var(--font-h2);
+}
+h3,
+.h3 {
+  font: var(--font-h3);
+}
+h4,
+.h4 {
+  font: var(--font-h4);
+}
+h5,
+.h5 {
+  font: var(--font-h5);
+}
+h6,
+.h6 {
+  font: var(--font-h6);
+}
+p,
+.paragraph {
+  font: var(--font-paragraph);
+  line-height: 1.618;
+}
+
+.smaller {
+  font: var(--font-smaller);
+}
+
+.link {
+  color: var(--theme-color-link-default);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+small {
+  font: var(--font-small);
+}
+
+strong {
+  font-weight: 900;
+}
+
+/* 
+  ? Helpers
+  * =================================================================
+*/
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-text-alternate {
+  color: var(--theme-color-text-alternate);
+}
+
+.text-align\:center {
+  text-align: center;
+}

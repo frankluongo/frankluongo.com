@@ -1,0 +1,17 @@
+@media (max-width: 699px) {
+  [data-display="mediumUp"] {
+    display: none;
+  }
+}
+
+@media (max-width: 999px) {
+  [data-display="largeUp"] {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  [data-display="largeDown"] {
+    display: none;
+  }
+}

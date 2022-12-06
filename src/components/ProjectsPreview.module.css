@@ -4,5 +4,5 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, var(--card-width));
-  padding-block: 3rem;
+  justify-content: center;
 }

@@ -10,7 +10,7 @@ import * as css from "./Header.module.css";
 export const Header = () => {
   return (
     <header className={css.Header} data-app-header>
-      <section className={css.Container} data-container>
+      <section className="container flex gap:2" data-container>
         <Logo type="alternate" />
         <DesktopMenu />
         <Socials data-display="largeUp" />

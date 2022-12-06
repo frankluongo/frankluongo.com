@@ -1,0 +1,37 @@
+.Copyright {
+  --block-padding: 1rem;
+
+  padding-block: var(--block-padding);
+
+  color: var(--color-white);
+
+  background-color: var(--color-gray-5);
+}
+
+.Footer {
+  --block-padding: 3rem;
+
+  padding-block: var(--block-padding);
+
+  color: var(--theme-color-text-alternate);
+
+  background-color: var(--theme-color-background-alternate);
+}
+
+.Footer a {
+  color: var(--theme-color-text-alternate);
+}
+
+.GridThree {
+  --column-width: 20rem;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
+}
+
+@media (min-width: 700px) {
+  .Footer {
+    --block-padding: 6rem;
+  }
+}

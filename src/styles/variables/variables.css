@@ -61,7 +61,7 @@
   font: font-style font-variant font-weight font-size/line-height font-family
   */
   --font-h1: normal 900 2rem/1.1 var(--font-primary);
-  --font-h2: normal 900 1.5rem/1.1 var(--font-primary);
+  --font-h2: normal 1.5rem/1.1 var(--font-primary);
   --font-h3: normal 900 1.125rem/1.1 var(--font-primary);
   --font-h4: normal 900 1rem/1.1 var(--font-primary);
   --font-h5: normal 900 0.875rem/1.1 var(--font-primary);
@@ -73,6 +73,7 @@
   /* ? Theme */
   /* ============================================================= */
   /* * Theme: Colors */
+  --theme-color-background-alternate: var(--color-black);
   --theme-color-background-default: var(--color-white);
   --theme-color-border-alternate: var(--color-gray-1);
   --theme-color-border-default: var(--color-gray-5);
@@ -94,7 +95,7 @@
 @media (min-width: 500px) {
   :root {
     --font-h1: normal 900 3rem/1.1 var(--font-primary);
-    --font-h2: normal 900 1.75rem/1.1 var(--font-primary);
+    --font-h2: normal 1.75rem/1.1 var(--font-primary);
     --font-h3: normal 900 1.5rem/1.1 var(--font-primary);
     --font-h4: normal 900 1.125rem/1.1 var(--font-primary);
     --font-h5: normal 900 1rem/1.1 var(--font-primary);
