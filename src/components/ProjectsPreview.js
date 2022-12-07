@@ -4,7 +4,7 @@ import { useProjects } from "#lib/useProjects";
 
 import { Card } from "#components/Card";
 
-import * as css from "./ProjectsPreview.module.css";
+import * as css from "#styles/components/ProjectsPreview.module.css";
 
 export const ProjectsPreview = ({ limit }) => {
   const projects = useProjects();

@@ -45,6 +45,10 @@
   * =================================================================
 */
 
+.gap\:0\.5 {
+  gap: 0.5rem;
+}
+
 .gap\:1 {
   gap: 1rem;
 }
@@ -86,7 +90,13 @@
   grid-template-columns: repeat(auto-fit, minmax(var(--min-column), 1fr));
 }
 
-.justify-center {
+/* 
+  ? Justify
+  Sets how to justify content
+  * =================================================================
+*/
+
+.justify-content\:center {
   justify-content: center;
 }
 

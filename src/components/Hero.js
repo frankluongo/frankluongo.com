@@ -2,7 +2,7 @@ import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useImages } from "#lib/useImages";
 
-import * as css from "./Hero.module.css";
+import * as css from "#styles/components/Hero.module.css";
 
 const defaultExtraStyles = {
   root: "",

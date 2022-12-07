@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useNav } from "#lib/useNav";
 
-import * as css from "./DesktopMenu.module.css";
+import * as css from "#styles/components/DesktopMenu.module.css";
 
 export const DesktopMenu = () => {
   const links = useNav();

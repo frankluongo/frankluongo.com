@@ -4,7 +4,7 @@ import { useMobileCtx } from "../presentation/mobileNav";
 
 import { useNav } from "#lib/useNav";
 
-import * as css from "./MobileMenu.module.css";
+import * as css from "#styles/components/MobileMenu.module.css";
 import { Link } from "gatsby";
 import { Socials } from "./Socials";
 

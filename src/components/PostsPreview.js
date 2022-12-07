@@ -3,7 +3,7 @@ import React from "react";
 import { usePosts } from "#lib/usePosts";
 import { Link } from "gatsby";
 
-import * as css from "./PostsPreview.module.css";
+import * as css from "#styles/components/PostsPreview.module.css";
 
 export const PostsPreview = () => {
   const posts = usePosts();

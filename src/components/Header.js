@@ -5,7 +5,7 @@ import { DesktopMenu } from "./DesktopMenu";
 import { MobileToggle } from "./MobileToggle";
 import { Socials } from "./Socials";
 
-import * as css from "./Header.module.css";
+import * as css from "#styles/components/Header.module.css";
 
 export const Header = () => {
   return (

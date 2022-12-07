@@ -2,7 +2,7 @@ import React from "react";
 
 import { useSocials } from "../lib/useSocials";
 
-import * as css from "./Socials.module.css";
+import * as css from "#styles/components/Socials.module.css";
 
 export const Socials = ({ type, ...props }) => {
   const socials = useSocials();

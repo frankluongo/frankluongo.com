@@ -1,16 +1,9 @@
 .Availability {
-  align-items: center;
-  display: flex;
-  gap: 0.5rem;
-
   font: var(--font-smaller);
 }
 
 .Availability div {
-  align-items: center;
-  display: flex;
   height: 0.875rem;
-  justify-content: center;
   width: 0.875rem;
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as css from "./Markup.module.css";
+import * as css from "#styles/components/Markup.module.css";
 
 export const Markup = ({ Tag, content }) => {
   return (

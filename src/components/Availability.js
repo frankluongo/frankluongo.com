@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as css from "./Availability.module.css";
+import * as css from "#styles/components/Availability.module.css";
 import { useMeta } from "../lib/useMeta";
 
 const icons = {
@@ -12,7 +12,9 @@ export const Availability = ({ extraClasses }) => {
   const status = avail.title;
   const Icon = icons[avail.properties.content.value];
   return (
-    <article className={`${css.Availability} ${extraClasses}`}>
+    <article
+      className={`${css.Availability} flex align-items:center gap:0.5 ${extraClasses}`}
+    >
       <Icon />
       {status}
     </article>
@@ -20,12 +22,13 @@ export const Availability = ({ extraClasses }) => {
 };
 
 Availability.defaultProps = {
-  extraClasses: "justify-center",
+  extraClasses: "justify-content:center",
 };
 
 function Checkmark() {
   return (
     <div
+      className="flex align-items:center justify-content:center"
       style={{
         backgroundColor: `var(--color-green)`,
         borderRadius: "50%",

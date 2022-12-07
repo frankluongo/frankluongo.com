@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as css from "./SkipLink.module.css";
+import * as css from "#styles/components/SkipLink.module.css";
 
 export const SkipLink = () => {
   return (

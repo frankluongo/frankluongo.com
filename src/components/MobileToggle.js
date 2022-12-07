@@ -2,7 +2,7 @@ import React from "react";
 import { useMobileCtx } from "../presentation/mobileNav";
 import { MobileMenu } from "./MobileMenu";
 
-import * as css from "./MobileToggle.module.css";
+import * as css from "#styles/components/MobileToggle.module.css";
 
 export const MobileToggle = () => {
   const { navOpen, setNavOpen } = useMobileCtx();

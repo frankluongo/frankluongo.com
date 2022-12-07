@@ -9,7 +9,7 @@ import { Availability } from "#components/Availability";
 import { Logo } from "#components/Logo";
 import { Socials } from "./Socials";
 
-import * as css from "./Footer.module.css";
+import * as css from "#styles/components/Footer.module.css";
 
 export const Footer = () => {
   const meta = useMeta();
@@ -55,7 +55,10 @@ export const Footer = () => {
         </section>
       </footer>
       <section className={css.Copyright}>
-        <div className="flex justify-center align-items:center" data-container>
+        <div
+          className="flex justify-content:center align-items:center"
+          data-container
+        >
           <small>&copy; {year} Frank Luongo Design Co., LLC</small>
         </div>
       </section>

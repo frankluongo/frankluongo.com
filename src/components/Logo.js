@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as css from "./Logo.module.css";
+import * as css from "#styles/components/Logo.module.css";
 
 export const Logo = ({ type }) => {
   return (

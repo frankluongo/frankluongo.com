@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useImages } from "#lib/useImages";
 
-import * as css from "./Card.module.css";
+import * as css from "#styles/components/Card.module.css";
 
 export const Card = ({ previewImage, slug, thumbnailImage, title }) => {
   const images = useImages();

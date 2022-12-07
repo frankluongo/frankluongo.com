@@ -51,7 +51,7 @@ const IndexPage = () => {
             </p>
           </header>
           <ProjectsPreview limit={4} />
-          <div className="flex justify-center">
+          <div className="flex justify-content:center">
             <Button Tag={Link} to="/projects" data-theme="dark">
               See 'Em All
             </Button>
