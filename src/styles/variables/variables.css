@@ -53,6 +53,10 @@
   --drop-shadow: drop-shadow(0px 1px 4px rgba(39, 35, 33, 0.1));
   --header-height: 3rem;
   --max-width: 1200px;
+  --transition-easing: ease-in-out;
+  --transition-timing: 150ms;
+  --transition-transform: transform var(--transition-timing)
+    var(--transition-easing);
 
   /* ? Typography */
   /* ============================================================= */

@@ -9,8 +9,9 @@ import { Availability } from "../components/Availability";
 import { Button } from "../components/Button";
 import { Hero } from "../components/Hero";
 import { PostsPreview } from "../components/PostsPreview";
+import { Seo } from "../components/Seo";
 
-const TITLE = "Blog | Frank Luongo Design Co.";
+const TITLE = "Blog";
 
 const BlogPage = () => {
   const data = useBlogPage();
@@ -35,7 +36,10 @@ const BlogPage = () => {
           </Button>
         </div>
       </Hero>
-      <section className="container page-body flex flex-direction:column gap:3">
+      <section className="container page-body flex flex-direction:column gap:2">
+        <header>
+          <h3>Articles &amp; Whatnot</h3>
+        </header>
         <PostsPreview />
       </section>
     </>
@@ -44,4 +48,4 @@ const BlogPage = () => {
 
 export default BlogPage;
 
-export const Head = () => <title>{TITLE}</title>;
+export const Head = () => <Seo title={TITLE} />;

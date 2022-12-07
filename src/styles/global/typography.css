@@ -61,6 +61,10 @@ strong {
   color: var(--color-white);
 }
 
+.color\:--text-default {
+  color: var(--theme-color-text-default);
+}
+
 .color-text-alternate {
   color: var(--theme-color-text-alternate);
 }

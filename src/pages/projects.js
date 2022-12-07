@@ -7,10 +7,11 @@ import { Availability } from "../components/Availability";
 import { Button } from "../components/Button";
 import { Hero } from "../components/Hero";
 import { ProjectsPreview } from "../components/ProjectsPreview";
+import { Seo } from "../components/Seo";
 
 import { mdToHTML } from "../helpers/mdToHTML";
 
-const TITLE = "Projects | Frank Luongo Design Co.";
+const TITLE = "Projects";
 
 const ProjectsPage = () => {
   const data = useProjectsPage();
@@ -44,4 +45,4 @@ const ProjectsPage = () => {
 
 export default ProjectsPage;
 
-export const Head = () => <title>{TITLE}</title>;
+export const Head = () => <Seo title={TITLE} />;

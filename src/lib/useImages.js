@@ -6,6 +6,7 @@ export function useImages(path = false) {
       query ImagesQuery {
         allFile {
           nodes {
+            publicURL
             relativePath
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, formats: AUTO)

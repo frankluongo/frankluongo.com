@@ -1,20 +1,24 @@
-.Heading {
+/* .Heading {
   font-size: 14px;
   font-style: italic;
   font-weight: 900;
-}
+} */
 
 .Logo {
   display: inline-flex;
   flex-direction: column;
-  height: 2rem;
+  height: 1.5rem;
   justify-content: center;
 
   line-height: 0.9;
 }
 
-.Subheading {
+.Logo svg {
+  fill: white;
+}
+
+/* .Subheading {
   color: var(--color-gray-2);
   font-size: 10px;
   font-style: italic;
-}
+} */

@@ -4,9 +4,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { useImages } from "#lib/useImages";
 
+import * as css from "#styles/components/Image.module.css";
+
 export const Image = ({ alt, path, ...props }) => {
   const imageData = useImages(path);
   const image = getImage(imageData);
   if (!path || !imageData) return null;
-  return <GatsbyImage image={image} alt={alt} {...props} />;
+  return (
+    <GatsbyImage className={css.Image} image={image} alt={alt} {...props} />
+  );
 };

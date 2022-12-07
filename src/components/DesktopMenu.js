@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Link } from "gatsby";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "gatsby";
 
 import { useNav } from "#lib/useNav";
 

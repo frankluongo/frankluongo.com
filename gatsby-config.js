@@ -7,7 +7,7 @@ require("dotenv").config({
  */
 module.exports = {
   siteMetadata: {
-    title: `frankluongo.com-v5`,
+    title: `frankluongo.com`,
     siteUrl: `https://frankluongo.com`,
   },
   plugins: [

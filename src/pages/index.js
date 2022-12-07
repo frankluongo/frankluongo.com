@@ -8,12 +8,13 @@ import { Button } from "../components/Button";
 import { Hero } from "../components/Hero";
 import { Markup } from "../components/Markup";
 import { ProjectsPreview } from "../components/ProjectsPreview";
+import { Seo } from "../components/Seo";
 
 import { Image } from "../components/Image";
 
 import { Link } from "gatsby";
 
-const TITLE = "Home | Frank Luongo Design Co.";
+const TITLE = "Home";
 
 const IndexPage = () => {
   const data = useHome();
@@ -57,7 +58,7 @@ const IndexPage = () => {
             </Button>
           </div>
         </div>
-        <div className="grid align-items:center gap:1 grid:auto-fit/1fr">
+        <div className="grid align-items:center gap:1 grid:cols-2">
           <div className="block-gap:1">
             <Markup
               Tag="article"
@@ -81,4 +82,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>{TITLE}</title>;
+export const Head = () => <Seo title={TITLE} />;

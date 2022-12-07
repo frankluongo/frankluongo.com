@@ -11,8 +11,9 @@ import { Hero } from "../components/Hero";
 import { Markup } from "../components/Markup";
 import { Likes } from "../components/Likes";
 import { Socials } from "../components/Socials";
+import { Seo } from "../components/Seo";
 
-const TITLE = "Contact Me | Frank Luongo Design Co.";
+const TITLE = "Contact Me";
 
 const ContactPage = () => {
   const data = useContactPage();
@@ -37,7 +38,7 @@ const ContactPage = () => {
           </Button>
         </div>
       </Hero>
-      <section className="container page-body grid gap:2 grid:auto-fit/1fr">
+      <section className="container page-body grid gap:2 grid:cols-2">
         <div className="flex flex-direction:column gap:1">
           <h3>{data.aboutMeHeadline.properties.content.value}</h3>
           <Markup
@@ -58,4 +59,4 @@ const ContactPage = () => {
 
 export default ContactPage;
 
-export const Head = () => <title>{TITLE}</title>;
+export const Head = () => <Seo title={TITLE} />;

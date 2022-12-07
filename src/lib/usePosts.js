@@ -20,11 +20,37 @@ export function usePosts() {
               slug {
                 value
               }
+              previewImage {
+                value
+              }
+              imagePath {
+                value
+              }
+              thumbnailImage {
+                value
+              }
+              content {
+                value
+              }
+              tags {
+                value {
+                  name
+                }
+              }
             }
           }
         }
       }
     `
   );
-  return parseNotionData(data.allNotion.nodes, ["id", "slug", "title"]);
+  return parseNotionData(data.allNotion.nodes, [
+    "id",
+    "slug",
+    "title",
+    "previewImage",
+    "imagePath",
+    "thumbnailImage",
+    "content",
+    "tags",
+  ]);
 }

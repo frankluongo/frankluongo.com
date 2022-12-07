@@ -1,7 +1,12 @@
 import React from "react";
 
 import * as css from "#styles/components/BlogPost.module.css";
+import { classes } from "../helpers/classes";
 
 export const BlogPost = (props) => {
-  return <article className={css.BlogPost} {...props} />;
+  const classNames = classes([
+    css.BlogPost,
+    "flex flex-direction:column gap:1",
+  ]);
+  return <article className={classNames} {...props} />;
 };
