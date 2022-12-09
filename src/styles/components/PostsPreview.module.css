@@ -12,9 +12,11 @@
   transition: var(--transition-transform);
 }
 
-.Link:hover,
-.Link:focus {
-  transform: scale(1.1) rotate(-1deg);
+@media not (prefers-reduced-motion) and (hover: hover) {
+  .Link:hover,
+  .Link:focus {
+    transform: scale(1.1) rotate(-1deg);
+  }
 }
 
 .List {

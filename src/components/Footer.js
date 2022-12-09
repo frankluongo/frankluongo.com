@@ -44,13 +44,11 @@ export const Footer = () => {
             </header>
             <ul className="flex align-items:center gap:1">
               {links.map((link) => (
-                <Link
-                  className="smaller"
-                  key={`${link.id}-footer`}
-                  to={link.slug}
-                >
-                  {link.title}
-                </Link>
+                <li key={`${link.id}-footer`}>
+                  <Link className="smaller" to={link.slug}>
+                    {link.title}
+                  </Link>
+                </li>
               ))}
             </ul>
           </section>

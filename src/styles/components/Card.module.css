@@ -14,10 +14,12 @@
   transition: transform 150ms ease-in-out;
 }
 
-.Card:hover,
-.Card:focus {
-  transform: scale(1.1) rotate(-1deg);
-  z-index: 2;
+@media not (prefers-reduced-motion) and (hover: hover) {
+  .Card:hover,
+  .Card:focus {
+    transform: scale(1.1) rotate(-1deg);
+    z-index: 2;
+  }
 }
 
 .Link {
