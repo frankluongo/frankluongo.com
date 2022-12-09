@@ -7,7 +7,6 @@ import * as css from "#styles/components/PostsPreview.module.css";
 
 export const PostsPreview = () => {
   const posts = usePosts();
-  console.log(posts);
   return (
     <ul className={css.List}>
       {posts.map((post) => (

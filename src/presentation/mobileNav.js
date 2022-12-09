@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { useLocation } from "@reach/router";
 import { useMediaQuery } from "./useMediaQuery";
 
 const defaultValues = {
@@ -9,6 +10,7 @@ const defaultValues = {
 const MobileCtx = createContext(defaultValues);
 
 export const MobileCtxProvider = ({ children }) => {
+  const pathname = useLocation().pathname;
   const [navOpen, setNavOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 999px)");
 
@@ -16,6 +18,10 @@ export const MobileCtxProvider = ({ children }) => {
     if (isMobile) return;
     setNavOpen(false);
   }, [isMobile]);
+
+  useEffect(() => {
+    setNavOpen(false);
+  }, [pathname]);
 
   return (
     <MobileCtx.Provider value={{ navOpen, setNavOpen }}>
