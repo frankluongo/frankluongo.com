@@ -38,3 +38,15 @@ html .BlogPost pre code {
 
   border-radius: var(--border-radius-default);
 }
+
+.BlogPost p code {
+  display: inline-block;
+  padding-block: 0;
+  padding-inline: 0.25rem;
+
+  color: var(--color-yellow);
+  line-height: 1.2;
+
+  background-color: var(--color-black);
+  border-radius: 0.25rem;
+}
