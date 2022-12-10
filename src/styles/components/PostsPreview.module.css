@@ -40,7 +40,7 @@
   overflow: hidden;
 }
 
-.PreviewImage > * {
+.PreviewImage > [data-gatsby-image-wrapper] {
   inset: 0;
   position: absolute;
 }
