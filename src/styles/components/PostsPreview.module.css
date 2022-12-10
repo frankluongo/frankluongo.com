@@ -12,7 +12,7 @@
   transition: var(--transition-transform);
 }
 
-@media not (prefers-reduced-motion) and (hover: hover) {
+@media (hover: hover) {
   .Link:hover,
   .Link:focus {
     transform: scale(1.1) rotate(-1deg);

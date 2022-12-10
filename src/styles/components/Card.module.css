@@ -14,7 +14,7 @@
   transition: transform 150ms ease-in-out;
 }
 
-@media not (prefers-reduced-motion) and (hover: hover) {
+@media (hover: hover) {
   .Card:hover,
   .Card:focus {
     transform: scale(1.1) rotate(-1deg);
@@ -29,6 +29,7 @@
   position: relative;
 
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: var(--gap);
   padding: var(--padding);
@@ -63,9 +64,6 @@
 }
 
 .Title {
-  display: flex;
-  gap: 0.5rem;
-
   font: var(--font-smaller);
 }
 

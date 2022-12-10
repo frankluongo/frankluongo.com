@@ -18,7 +18,7 @@
   transition: all 150ms ease-in-out;
 }
 
-@media not (prefers-reduced-motion) and (hover: hover) {
+@media (hover: hover) {
   .Button:hover,
   .Button:focus {
     --background: var(--color-blue);
@@ -31,7 +31,7 @@
   --color: var(--color-white);
 }
 
-@media not (prefers-reduced-motion) and (hover: hover) {
+@media (hover: hover) {
   .Button[data-theme="dark"]:hover,
   .Button[data-theme="dark"]:focus {
     transform: scale(1.1);

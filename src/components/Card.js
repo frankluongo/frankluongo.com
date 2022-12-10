@@ -19,10 +19,12 @@ export const Card = ({ previewImage, slug, thumbnailImage, title }) => {
           )}
           <small>{title}</small>
         </header>
-        {previewImage && (
+        {preview ? (
           <GatsbyImage className={css.Thumbnail} alt={title} image={preview} />
+        ) : (
+          <div className={css.Thumbnail} />
         )}
-        <div className={css.Title}>
+        <div className="flex align-items:center gap:0.5 smaller">
           {title}
           <ChevronRight className={css.Icon} />
         </div>

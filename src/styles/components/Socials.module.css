@@ -38,7 +38,7 @@
   transition: all 150ms ease-in-out;
 }
 
-@media not (prefers-reduced-motion) and (hover: hover) {
+@media (hover: hover) {
   .Socials[data-type="cards"] .Social:hover,
   .Socials[data-type="cards"] .Social:focus {
     transform: scale(1.1) rotate(2deg);
