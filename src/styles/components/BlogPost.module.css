@@ -30,16 +30,7 @@
   margin-top: 1rem;
 }
 
-html .BlogPost pre code {
-  padding: 2rem;
-
-  font-size: 1rem;
-  line-height: 1.618;
-
-  border-radius: var(--border-radius-default);
-}
-
-.BlogPost p code {
+.BlogPost :not(pre) code {
   display: inline-block;
   padding-block: 0;
   padding-inline: 0.25rem;
@@ -49,4 +40,13 @@ html .BlogPost pre code {
 
   background-color: var(--color-black);
   border-radius: 0.25rem;
+}
+
+html .BlogPost pre code {
+  padding: 2rem;
+
+  font-size: 1rem;
+  line-height: 1.618;
+
+  border-radius: var(--border-radius-default);
 }

@@ -29,7 +29,8 @@ h6,
   font: var(--font-h6);
 }
 p,
-.paragraph {
+.paragraph,
+li {
   font: var(--font-paragraph);
   line-height: 1.618;
 }
