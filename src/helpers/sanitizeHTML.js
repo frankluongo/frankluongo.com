@@ -14,6 +14,8 @@ export function sanitizeHTML(html, imageObj, path) {
   const htmlImages = html.match(/([A-Z|a-z|-])+\.(png|jpg)/g);
   // Grab all the "src="blahblahblag"" strings
   const srcs = html.match(/src="(.*?)"/g);
+  // If htmlImages does not exist OR has no length, just return
+  if (!htmlImages || !!htmlImages.length) return sanitizedHTML;
   // Go through each image we have
   htmlImages.forEach((img) => {
     // Create a path to the image hosted in Gatsby
