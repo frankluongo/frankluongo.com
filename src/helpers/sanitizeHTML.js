@@ -1,17 +1,28 @@
 /**
  * sanitizeHTML()
- * Takes in HTML, and the image object
+ * Takes in HTML, the image object and a path and returns the HTML
+ * with images sourced from our Gatsby site instead of Notion
  * @param {string} html - The post/project html from markdown
- * @param {object} imageObj - the Image Object containing all of the images for the site
+ * @param {object} imageObj - the Image Object containing all of
+ * the images for the site
  * @returns {string} Sanitized HTML
  */
 export function sanitizeHTML(html, imageObj, path) {
-  const tempHTML = document.createElement("div");
-  tempHTML.innerHTML = html;
-  const images = tempHTML.querySelectorAll("img");
-  images.forEach((img) => {
-    const rawImg = img.src.match(/([A-Z|a-z|-])+\.(png|jpg)/)[0];
-    img.src = imageObj[`${path}/${rawImg}`].publicURL;
+  // Initially, create a copy of our html
+  let sanitizedHTML = html;
+  // Grab all of the image src's (image-name.jpg) in the html
+  const htmlImages = html.match(/([A-Z|a-z|-])+\.(png|jpg)/g);
+  // Grab all the "src="blahblahblag"" strings
+  const srcs = html.match(/src="(.*?)"/g);
+  // Go through each image we have
+  htmlImages.forEach((img) => {
+    // Create a path to the image hosted in Gatsby
+    const newSrc = imageObj[`${path}/${img}`].publicURL;
+    // Grab the string for the current "src" in HTML
+    const oldSrc = srcs.find((src) => src.includes(img));
+    // Modify sanitizedHTML to replace the old "src" with the new one
+    sanitizedHTML = sanitizedHTML.replace(oldSrc, `src="${newSrc}"`);
   });
-  return tempHTML.innerHTML;
+  // Return the HTML
+  return sanitizedHTML;
 }
