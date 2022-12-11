@@ -1,12 +1,20 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+import { useImages } from "#lib/useImages";
+
 import { BlogPost } from "../components/BlogPost";
 import { Hero } from "../components/Hero";
 import { Seo } from "../components/Seo";
+import { sanitizeHTML } from "../helpers/sanitizeHTML";
 
 const Project = ({ data }) => {
-  const __html = data.notion.childMarkdownRemark.html;
+  const imageObj = useImages();
+  const __html = sanitizeHTML(
+    data.notion.childMarkdownRemark.html,
+    imageObj,
+    "projects"
+  );
 
   return (
     <>
