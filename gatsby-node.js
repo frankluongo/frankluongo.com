@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 function makeQuery(name, type) {
   return `
-    query AllPostsAndProjectsQuery {
+    query {
       ${name}: allNotion(
         filter: {
           properties: {

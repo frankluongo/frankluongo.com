@@ -1,7 +1,8 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 
-import { useProjectsPage } from "../lib/useProjectsPage";
 import { useMeta } from "#lib/useMeta";
+import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 import { Availability } from "../components/Availability";
 import { Button } from "../components/Button";
@@ -13,8 +14,8 @@ import { mdToHTML } from "../helpers/mdToHTML";
 
 const TITLE = "Projects";
 
-const ProjectsPage = () => {
-  const data = useProjectsPage();
+const ProjectsPage = (props) => {
+  const data = objectifyNotionData(props.data.allNotion.nodes);
   const { businessEmail } = useMeta();
 
   const __html = mdToHTML(data.heroHeadline.properties.content.value);
@@ -43,6 +44,38 @@ const ProjectsPage = () => {
   );
 };
 
+export const query = graphql`
+  query ProjectsPageQuery {
+    allNotion(
+      filter: {
+        properties: {
+          published: { value: { eq: true } }
+          space: { value: { name: { eq: "projectsPage" } } }
+        }
+      }
+    ) {
+      nodes {
+        properties {
+          slug {
+            value
+          }
+          content {
+            value
+          }
+          imagePath {
+            value
+          }
+        }
+        title
+        id
+      }
+    }
+  }
+`;
+
 export default ProjectsPage;
 
-export const Head = () => <Seo title={TITLE} />;
+export const Head = ({ data }) => {
+  const page = objectifyNotionData(data.allNotion.nodes);
+  return <Seo title={TITLE} description={page?.metaDescription} />;
+};

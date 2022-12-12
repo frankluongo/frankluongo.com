@@ -1,6 +1,7 @@
 import * as React from "react";
+import { graphql, Link } from "gatsby";
+import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
-import { useHome } from "#lib/useHome";
 import { useMeta } from "#lib/useMeta";
 
 import { Availability } from "../components/Availability";
@@ -12,12 +13,10 @@ import { Seo } from "../components/Seo";
 
 import { Image } from "../components/Image";
 
-import { Link } from "gatsby";
-
 const TITLE = "Home";
 
-const IndexPage = () => {
-  const data = useHome();
+const IndexPage = (props) => {
+  const data = objectifyNotionData(props.data.allNotion.nodes);
   const { businessEmail } = useMeta();
   return (
     <>
@@ -79,6 +78,43 @@ const IndexPage = () => {
     </>
   );
 };
+
+export const query = graphql`
+  query HomepageQuery {
+    allNotion(
+      filter: {
+        properties: {
+          space: { value: { name: { eq: "home" } } }
+          published: { value: { eq: true } }
+        }
+      }
+    ) {
+      nodes {
+        properties {
+          slug {
+            value
+          }
+          content {
+            value
+          }
+          imagePath {
+            value
+          }
+          type {
+            value {
+              name
+            }
+          }
+        }
+        id
+        title
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
 

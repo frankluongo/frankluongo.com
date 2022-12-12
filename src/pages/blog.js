@@ -1,9 +1,10 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 
-import { useBlogPage } from "#lib/useBlogPage";
 import { useMeta } from "#lib/useMeta";
 
 import { mdToHTML } from "../helpers/mdToHTML";
+import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 import { Availability } from "../components/Availability";
 import { Button } from "../components/Button";
@@ -13,8 +14,8 @@ import { Seo } from "../components/Seo";
 
 const TITLE = "Blog";
 
-const BlogPage = () => {
-  const data = useBlogPage();
+const BlogPage = (props) => {
+  const data = objectifyNotionData(props.data.allNotion.nodes);
   const { businessEmail } = useMeta();
 
   const __html = mdToHTML(data.heroHeadline.properties.content.value);
@@ -46,6 +47,38 @@ const BlogPage = () => {
   );
 };
 
+export const query = graphql`
+  query BlogPageQuery {
+    allNotion(
+      filter: {
+        properties: {
+          published: { value: { eq: true } }
+          space: { value: { name: { eq: "blog" } } }
+        }
+      }
+    ) {
+      nodes {
+        title
+        id
+        properties {
+          slug {
+            value
+          }
+          content {
+            value
+          }
+          imagePath {
+            value
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default BlogPage;
 
-export const Head = () => <Seo title={TITLE} />;
+export const Head = ({ data }) => {
+  const page = objectifyNotionData(data.allNotion.nodes);
+  return <Seo title={TITLE} description={page?.metaDescription} />;
+};

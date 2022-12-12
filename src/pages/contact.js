@@ -1,9 +1,10 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 
-import { useContactPage } from "#lib/useContactPage";
 import { useMeta } from "#lib/useMeta";
 
 import { mdToHTML } from "../helpers/mdToHTML";
+import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 import { Availability } from "../components/Availability";
 import { Button } from "../components/Button";
@@ -15,8 +16,8 @@ import { Seo } from "../components/Seo";
 
 const TITLE = "Contact Me";
 
-const ContactPage = () => {
-  const data = useContactPage();
+const ContactPage = (props) => {
+  const data = objectifyNotionData(props.data.allNotion.nodes);
   const { businessEmail } = useMeta();
 
   const __html = mdToHTML(data.heroHeadline.properties.content.value);
@@ -57,6 +58,41 @@ const ContactPage = () => {
   );
 };
 
+export const query = graphql`
+  query ContactPageQuery {
+    allNotion(
+      filter: {
+        properties: {
+          published: { value: { eq: true } }
+          space: { value: { name: { eq: "contact" } } }
+        }
+      }
+    ) {
+      nodes {
+        properties {
+          slug {
+            value
+          }
+          content {
+            value
+          }
+          imagePath {
+            value
+          }
+        }
+        title
+        id
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`;
+
 export default ContactPage;
 
-export const Head = () => <Seo title={TITLE} />;
+export const Head = ({ data }) => {
+  const page = objectifyNotionData(data.allNotion.nodes);
+  return <Seo title={TITLE} description={page?.metaDescription} />;
+};

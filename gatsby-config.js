@@ -66,6 +66,7 @@ module.exports = {
         root: "./src",
         aliases: {
           "#components": "./components",
+          "#helpers": "./helpers",
           "#lib": "./lib",
           "#presentation": "./presentation",
           "#styles": "./styles",
