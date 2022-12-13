@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const NotFoundPage = () => {
   return (
     <>
-      <section className="container page-body flex flex-direction:column gap:3">
+      <section className="container container--blog page-body flex flex-direction:column gap:3">
         <header>
           <h1>Page not found</h1>
         </header>
