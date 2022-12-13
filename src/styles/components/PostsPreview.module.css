@@ -13,10 +13,8 @@
   transition: var(--transition-transform);
 }
 
-@media (prefers-color-scheme: dark) {
-  .Link {
-    --bg: var(--color-black-full);
-  }
+:root[class="is-dark"] .Link {
+  --bg: var(--color-black-full);
 }
 
 @media (hover: hover) {
