@@ -17,7 +17,6 @@ const themeClasses = Object.values(modes);
 export const ThemeToggle = () => {
   const darkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [colorMode, setColorMode] = useState(modes[darkMode ? DARK : LIGHT]);
-  const isChecked = colorMode === "is-dark";
   const wrapperClasses = classes([
     css.ThemeToggle,
     "flex align-items:center justify-content:center",
@@ -58,7 +57,7 @@ export const ThemeToggle = () => {
           className={css.SwitchInput}
           onChange={changeMode}
           type="checkbox"
-          checked={isChecked}
+          checked={colorMode === "is-dark"}
         />
         <span className={css.SwitchSlider} />
       </label>
