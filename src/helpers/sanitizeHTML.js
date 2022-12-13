@@ -11,20 +11,40 @@ export function sanitizeHTML(html, imageObj, path) {
   // Initially, create a copy of our html
   let sanitizedHTML = html;
   // Grab all of the image src's (image-name.jpg) in the html
-  const htmlImages = html.match(/([A-Z|a-z|-])+\.(png|jpg)/g);
-  // Grab all the "src="blahblahblag"" strings
-  const srcs = html.match(/src="(.*?)"/g);
-  // If htmlImages does not exist OR has no length, just return
-  if (!htmlImages || !htmlImages.length) return sanitizedHTML;
-  // Go through each image we have
-  htmlImages.forEach((img) => {
-    // Create a path to the image hosted in Gatsby
-    const newSrc = imageObj[`${path}/${img}`].publicURL;
-    // Grab the string for the current "src" in HTML
-    const oldSrc = srcs.find((src) => src.includes(img));
-    // Modify sanitizedHTML to replace the old "src" with the new one
-    sanitizedHTML = sanitizedHTML.replace(oldSrc, `src="${newSrc}"`);
-  });
-  // Return the HTML
+  const imgTags = html.match(/<img(.*?)>/g);
+
+  if (exists(imgTags)) {
+    imgTags.forEach((img) => {
+      // Get the alt tag, img filename, and create a mutable image
+      // to manipulate
+      const alt = img.match(/alt="(.*?)"/)[0];
+      const fileName = img.match(/([A-Z|a-z|-])+\.(png|jpg)/)[0];
+      const oldSrc = img.match(/src="(.*?)"/)[0];
+      let mutableImg = img;
+      // Replace alt tags
+      mutableImg = mutableImg.replace(alt, 'alt="Frank Luongo Design Co."');
+      // Get gatsby image
+      const gatsbyImage = imageObj[`${path}/${fileName}`];
+      const newSrc = gatsbyImage.publicURL;
+      const height = gatsbyImage?.childImageSharp?.original?.height || 0;
+      const width = gatsbyImage?.childImageSharp?.original?.width || 0;
+      const ratio = (height * 100) / width;
+      // replace the source
+      mutableImg = mutableImg.replace(
+        oldSrc,
+        `src="${newSrc}" class="normal-image"`
+      );
+      // Finally, add it to our html
+      sanitizedHTML = sanitizedHTML.replace(
+        img,
+        `<figure style="--ratio: ${ratio}%" class="normal-image-wrapper">${mutableImg}</figure>`
+      );
+    });
+  }
+  // Return the HTML:
   return sanitizedHTML;
+}
+
+function exists(arr) {
+  return arr && arr.length;
 }

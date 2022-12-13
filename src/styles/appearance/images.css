@@ -1,0 +1,15 @@
+.normal-image-wrapper {
+  position: relative;
+
+  padding-top: var(--ratio);
+
+  background-color: var(--color-black);
+}
+
+.normal-image {
+  inset: 0;
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+}

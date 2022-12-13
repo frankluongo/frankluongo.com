@@ -10,6 +10,10 @@ export function useImages(path = false) {
             relativePath
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+              original {
+                height
+                width
+              }
             }
           }
         }
