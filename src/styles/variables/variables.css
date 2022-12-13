@@ -7,9 +7,12 @@
   --color-green: #0bc17f;
   --color-red: #fc3b12;
   --color-teal: #1dacc0;
+  --color-teal-on-dark: #25d5ec;
   --color-yellow: #fec61d;
 
   /* * Colors: Surfaces */
+  --color-black-rich: #000;
+  --color-black-full: #1a1919;
   --color-black: #272321;
   --color-gray-1: #f5f5f5;
   --color-gray-2: #cbc9c8;
@@ -81,11 +84,11 @@
   --theme-color-background-default: var(--color-white);
   --theme-color-border-alternate: var(--color-gray-1);
   --theme-color-border-default: var(--color-gray-5);
-  --theme-color-border-light: var(--color-gray-2);
+  --theme-color-border-light: var(--color-gray-4);
   --theme-color-link-alternate: var(--color-teal);
   --theme-color-link-default: var(--color-blue);
   --theme-color-subheading-alternate: var(--color-gray-1);
-  --theme-color-subheading-default: var(--color-gray-3);
+  --theme-color-subheading-default: var(--color-gray-2);
   --theme-color-text-alternate: var(--color-white);
   --theme-color-text-default: var(--color-black);
 
@@ -106,5 +109,26 @@
     --font-h6: normal 900 0.875rem/1.1 var(--font-primary);
     --font-paragraph: normal 400 1rem/1.618 var(--font-primary);
     --font-small: normal 400 0.625rem/1.618 var(--font-primary);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --drop-shadow: drop-shadow(0px 1px 4px rgba(242, 237, 234, 0.1));
+
+    /* ? Theme */
+    /* ============================================================= */
+    /* * Theme: Colors */
+    --theme-color-background-alternate: var(--color-white);
+    --theme-color-background-default: var(--color-black);
+    --theme-color-border-alternate: var(--color-gray-1);
+    --theme-color-border-default: var(--color-gray-5);
+    --theme-color-border-light: var(--color-gray-5);
+    --theme-color-link-alternate: var(--color-blue);
+    --theme-color-link-default: var(--color-teal-on-dark);
+    --theme-color-subheading-alternate: var(--color-gray-1);
+    --theme-color-subheading-default: var(--color-gray-3);
+    --theme-color-text-alternate: var(--color-black);
+    --theme-color-text-default: var(--color-white);
   }
 }

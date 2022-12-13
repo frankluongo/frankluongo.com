@@ -8,13 +8,13 @@
   justify-content: flex-start;
   height: var(--header-height);
 
-  color: var(--color-text-alternate);
+  color: var(--color-white);
 
   background: var(--color-gradient-darkness);
 }
 
 @media (min-width: 1000px) {
   .Header a {
-    color: var(--theme-color-text-alternate);
+    color: var(--color-white);
   }
 }

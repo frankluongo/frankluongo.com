@@ -1,15 +1,22 @@
 .Link {
+  --bg: var(--theme-color-background-default);
   padding: 1rem;
 
   color: var(--theme-color-link-default);
   font: var(--font-h4);
   text-decoration: none;
 
-  background-color: var(--theme-color-background-default);
+  background-color: var(--bg);
   border-radius: var(--border-radius-default);
   border: 1px solid var(--theme-color-border-light);
   filter: var(--drop-shadow);
   transition: var(--transition-transform);
+}
+
+@media (prefers-color-scheme: dark) {
+  .Link {
+    --bg: var(--color-black-full);
+  }
 }
 
 @media (hover: hover) {

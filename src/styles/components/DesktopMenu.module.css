@@ -22,7 +22,7 @@
 }
 
 .Link {
-  color: var(--theme-color-text-alternate);
+  color: var(--color-white);
   font: var(--font-h5);
 
   text-decoration: none;

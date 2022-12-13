@@ -6,7 +6,7 @@ export const Logo = ({ type }) => {
   return (
     <svg
       className={css.Logo}
-      style={{ fill: `var(--theme-color-text-${type})` }}
+      style={{ fill: `var(--${type})` }}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1298 384"
     >

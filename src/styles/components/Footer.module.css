@@ -13,13 +13,13 @@
 
   padding-block: var(--block-padding);
 
-  color: var(--theme-color-text-alternate);
+  color: var(--theme-color-white);
 
-  background-color: var(--theme-color-background-alternate);
+  background-color: var(--color-black-full);
 }
 
 .Footer a {
-  color: var(--theme-color-text-alternate);
+  color: var(--color-white);
 }
 
 .GridThree {

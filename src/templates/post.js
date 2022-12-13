@@ -51,4 +51,6 @@ export const query = graphql`
 
 export default Post;
 
-export const Head = ({ pageContext }) => <Seo title={pageContext.title} />;
+export const Head = ({ pageContext }) => (
+  <Seo title={pageContext.title.replaceAll("**", "")} />
+);

@@ -23,7 +23,7 @@ export const Footer = () => {
         <h2 data-a11y-hidden>Website Footer</h2>
         <section className="container flex flex-direction:column gap:2">
           <header>
-            <Logo type="alternate" />
+            <Logo type="color-white" />
           </header>
           <section className="grid gap:1 grid:cols-3">
             <article className="flex flex-direction:column gap:0.5">

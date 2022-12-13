@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header className={css.Header} data-app-header>
       <section className="container flex gap:2" data-container>
-        <Logo type="alternate" />
+        <Logo type="color-white" />
         <DesktopMenu />
         <Socials data-display="largeUp" />
         <MobileToggle />

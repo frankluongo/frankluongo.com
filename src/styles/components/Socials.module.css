@@ -20,6 +20,7 @@
 }
 
 .Socials[data-type="cards"] .Social {
+  --bg: var(--theme-color-background-default);
   --padding: 1rem;
   --text-color: var(--theme-color-link-default);
   --icon-color: var(--color-gradient-teal-blue);
@@ -31,11 +32,17 @@
   color: var(--text-color);
   letter-spacing: 1px;
 
-  background-color: var(--theme-color-background-default);
+  background-color: var(--bg);
   box-shadow: var(--box-shadow);
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 150ms ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .Socials[data-type="cards"] .Social {
+    --bg: var(--color-black-full);
+  }
 }
 
 @media (hover: hover) {
