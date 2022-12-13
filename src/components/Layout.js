@@ -3,6 +3,7 @@ import { MobileCtxProvider } from "../presentation/mobileNav";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { SkipLink } from "./SkipLink";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Layout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ export const Layout = ({ children }) => {
       <Header />
       <main id="main">{children}</main>
       <Footer />
+      <ThemeToggle />
     </MobileCtxProvider>
   );
 };

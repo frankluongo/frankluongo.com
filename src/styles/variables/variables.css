@@ -58,6 +58,8 @@
   --max-width: 1200px;
   --transition-easing: ease-in-out;
   --transition-timing: 150ms;
+  --transition-opacity: opacity var(--transition-timing)
+    var(--transition-easing);
   --transition-transform: transform var(--transition-timing)
     var(--transition-easing);
 
@@ -77,12 +79,11 @@
   --font-smaller: normal 400 0.875rem/1.618 var(--font-primary);
   --font-small: normal 400 0.625rem/1.618 var(--font-primary);
 
-  /* ? Theme */
+  /* ? Default Theme */
   /* ============================================================= */
-  /* * Theme: Colors */
   --theme-color-background-alternate: var(--color-black);
   --theme-color-background-default: var(--color-white);
-  --theme-color-border-alternate: var(--color-gray-1);
+  --theme-color-border-alternate: var(--color-gray-2);
   --theme-color-border-default: var(--color-gray-5);
   --theme-color-border-light: var(--color-gray-4);
   --theme-color-link-alternate: var(--color-teal);
@@ -94,6 +95,7 @@
 
   /* ? Z-Index */
   /* ============================================================= */
+  --z-theme-toggle: 5;
   --z-header: 4;
   --z-mobile-menu: 3;
   --z-desktop-menu: 2;
@@ -112,16 +114,33 @@
   }
 }
 
+/*
+  ? THEMES
+  =======================================================================================
+*/
+
+/* Dark */
+:root.is-dark {
+  --drop-shadow: drop-shadow(0px 1px 4px rgba(242, 237, 234, 0.1));
+  --theme-color-background-alternate: var(--color-white);
+  --theme-color-background-default: var(--color-black);
+  --theme-color-border-alternate: var(--color-gray-4);
+  --theme-color-border-default: var(--color-gray-5);
+  --theme-color-border-light: var(--color-gray-5);
+  --theme-color-link-alternate: var(--color-blue);
+  --theme-color-link-default: var(--color-teal-on-dark);
+  --theme-color-subheading-alternate: var(--color-gray-1);
+  --theme-color-subheading-default: var(--color-gray-3);
+  --theme-color-text-alternate: var(--color-black);
+  --theme-color-text-default: var(--color-white);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --drop-shadow: drop-shadow(0px 1px 4px rgba(242, 237, 234, 0.1));
-
-    /* ? Theme */
-    /* ============================================================= */
-    /* * Theme: Colors */
     --theme-color-background-alternate: var(--color-white);
     --theme-color-background-default: var(--color-black);
-    --theme-color-border-alternate: var(--color-gray-1);
+    --theme-color-border-alternate: var(--color-gray-4);
     --theme-color-border-default: var(--color-gray-5);
     --theme-color-border-light: var(--color-gray-5);
     --theme-color-link-alternate: var(--color-blue);
@@ -130,5 +149,38 @@
     --theme-color-subheading-default: var(--color-gray-3);
     --theme-color-text-alternate: var(--color-black);
     --theme-color-text-default: var(--color-white);
+  }
+}
+
+/* * COLOR MODES: Light */
+:root.is-light {
+  --drop-shadow: drop-shadow(0px 1px 4px rgba(39, 35, 33, 0.1));
+  --theme-color-background-alternate: var(--color-black);
+  --theme-color-background-default: var(--color-white);
+  --theme-color-border-alternate: var(--color-gray-2);
+  --theme-color-border-default: var(--color-gray-5);
+  --theme-color-border-light: var(--color-gray-4);
+  --theme-color-link-alternate: var(--color-teal);
+  --theme-color-link-default: var(--color-blue);
+  --theme-color-subheading-alternate: var(--color-gray-1);
+  --theme-color-subheading-default: var(--color-gray-2);
+  --theme-color-text-alternate: var(--color-white);
+  --theme-color-text-default: var(--color-black);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --drop-shadow: drop-shadow(0px 1px 4px rgba(39, 35, 33, 0.1));
+    --theme-color-background-alternate: var(--color-black);
+    --theme-color-background-default: var(--color-white);
+    --theme-color-border-alternate: var(--color-gray-2);
+    --theme-color-border-default: var(--color-gray-5);
+    --theme-color-border-light: var(--color-gray-4);
+    --theme-color-link-alternate: var(--color-teal);
+    --theme-color-link-default: var(--color-blue);
+    --theme-color-subheading-alternate: var(--color-gray-1);
+    --theme-color-subheading-default: var(--color-gray-2);
+    --theme-color-text-alternate: var(--color-white);
+    --theme-color-text-default: var(--color-black);
   }
 }

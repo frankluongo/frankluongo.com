@@ -13,7 +13,7 @@
 
   padding-block: var(--block-padding);
 
-  color: var(--theme-color-white);
+  color: var(--color-white);
 
   background-color: var(--color-black-full);
 }
