@@ -1,26 +1,20 @@
 import React, { useEffect } from "react";
-import { useMediaQuery } from "../presentation/useMediaQuery";
+
+import { useMediaQuery } from "#hooks/useMediaQuery";
+import { useLocalStore } from "#hooks/useLocalStore";
+
+import { classes } from "#helpers/classes";
 
 import * as css from "#styles/components/ThemeToggle.module.css";
-import { classes } from "../helpers/classes";
-import { useLocalStore } from "../hooks/useLocalStore";
 
-const DARK = "dark";
-const LIGHT = "light";
-const MODE = "mode";
+const DARK_MODE = "darkMode";
 
-const modes = {
-  [DARK]: "is-dark",
-  [LIGHT]: "is-light",
-};
+const modes = { true: "is-dark", false: "is-light" };
 const themeClasses = Object.values(modes);
 
 export const ThemeToggle = () => {
   const darkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [colorMode, setLocalStoreColorMode, setStateColorMode] = useLocalStore(
-    MODE,
-    modes[darkMode ? DARK : LIGHT]
-  );
+  const [colorMode, setLocal, setState] = useLocalStore(DARK_MODE, darkMode);
   const wrapperClasses = classes([
     css.ThemeToggle,
     "flex align-items:center justify-content:center",
@@ -31,12 +25,11 @@ export const ThemeToggle = () => {
   ]);
 
   function changeMode(e) {
-    const newMode = modes[e.target.checked ? DARK : LIGHT];
-    setStateColorMode(newMode);
+    setState(e.target.checked);
   }
 
   function saveMode() {
-    setLocalStoreColorMode(colorMode);
+    setLocal(colorMode);
     alert("Color preferences saved!");
   }
 
@@ -44,7 +37,7 @@ export const ThemeToggle = () => {
     const classes = Array.from(document.documentElement.classList.values());
     const conflicts = classes.filter((clss) => themeClasses.includes(clss));
     document.documentElement.classList.remove(...conflicts);
-    document.documentElement.classList.add(colorMode);
+    document.documentElement.classList.add(modes[colorMode]);
   }, [colorMode]);
 
   return (
@@ -54,7 +47,7 @@ export const ThemeToggle = () => {
           className={css.SwitchInput}
           onChange={changeMode}
           type="checkbox"
-          defaultChecked={colorMode === "is-dark"}
+          defaultChecked={darkMode}
         />
         <span className={css.SwitchSlider} />
       </label>

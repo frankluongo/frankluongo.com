@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { isBrowser } from "../helpers/isBrowser";
 
 export function useMediaQuery(query) {
-  const mediaQuery = typeof window !== "undefined" && window.matchMedia(query);
+  const mediaQuery = isBrowser() && window.matchMedia(query);
   const [matches, setMatches] = useState(mediaQuery.matches);
 
   useEffect(() => {
@@ -12,5 +13,6 @@ export function useMediaQuery(query) {
     return () => mediaQuery.removeEventListener("change", onChange);
   }, [mediaQuery]);
 
+  if (!isBrowser()) return false;
   return matches;
 }

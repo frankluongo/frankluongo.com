@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useLocation } from "@reach/router";
-import { useMediaQuery } from "./useMediaQuery";
+import { useMediaQuery } from "#hooks/useMediaQuery";
 
 const defaultValues = {
   navOpen: false,
