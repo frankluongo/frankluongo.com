@@ -67,6 +67,7 @@ module.exports = {
         aliases: {
           "#components": "./components",
           "#helpers": "./helpers",
+          "#hooks": "./hooks",
           "#lib": "./lib",
           "#presentation": "./presentation",
           "#styles": "./styles",

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useMediaQuery } from "../presentation/useMediaQuery";
 
 import * as css from "#styles/components/ThemeToggle.module.css";
 import { classes } from "../helpers/classes";
+import { useLocalStore } from "../hooks/useLocalStore";
 
 const DARK = "dark";
 const LIGHT = "light";
@@ -16,7 +17,10 @@ const themeClasses = Object.values(modes);
 
 export const ThemeToggle = () => {
   const darkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [colorMode, setColorMode] = useState(modes[darkMode ? DARK : LIGHT]);
+  const [colorMode, setLocalStoreColorMode, setStateColorMode] = useLocalStore(
+    MODE,
+    modes[darkMode ? DARK : LIGHT]
+  );
   const wrapperClasses = classes([
     css.ThemeToggle,
     "flex align-items:center justify-content:center",
@@ -28,20 +32,13 @@ export const ThemeToggle = () => {
 
   function changeMode(e) {
     const newMode = modes[e.target.checked ? DARK : LIGHT];
-    setColorMode(newMode);
+    setStateColorMode(newMode);
   }
 
   function saveMode() {
-    window.localStorage.setItem(MODE, colorMode);
-    setColorMode(colorMode);
+    setLocalStoreColorMode(colorMode);
     alert("Color preferences saved!");
   }
-
-  useEffect(() => {
-    const savedMode = window.localStorage.getItem(MODE);
-    if (!savedMode) return;
-    setColorMode(savedMode);
-  }, []);
 
   useEffect(() => {
     const classes = Array.from(document.documentElement.classList.values());
@@ -57,7 +54,7 @@ export const ThemeToggle = () => {
           className={css.SwitchInput}
           onChange={changeMode}
           type="checkbox"
-          checked={colorMode === "is-dark"}
+          defaultChecked={colorMode === "is-dark"}
         />
         <span className={css.SwitchSlider} />
       </label>
