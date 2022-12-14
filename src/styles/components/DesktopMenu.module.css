@@ -6,6 +6,7 @@
   padding: 0.5rem;
   width: 12rem;
 
+  color: var(--theme-color-text-default);
   font: var(--font-small);
 
   background-color: var(--theme-color-background-default);
