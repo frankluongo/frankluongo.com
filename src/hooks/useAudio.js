@@ -1,11 +1,11 @@
-import { isBrowser } from "../helpers/isBrowser";
+import { useEffect, useState } from "react";
 
 export function useAudio(path) {
-  // if it's not a browser, just pretend:
-  if (!isBrowser)
-    return {
-      play: () => {},
-    };
+  const [audio, setAudio] = useState({ play: () => {} });
 
-  return new Audio(path);
+  useEffect(() => {
+    setAudio(new Audio(path));
+  }, [path]);
+
+  return audio;
 }
