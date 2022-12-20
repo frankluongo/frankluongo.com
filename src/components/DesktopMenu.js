@@ -5,8 +5,9 @@ import { Link } from "gatsby";
 
 import { useNav } from "#lib/useNav";
 
-import * as css from "#styles/components/DesktopMenu.module.css";
 import { useSettings } from "../context/settings";
+import { useAudio } from "../hooks/useAudio";
+import * as css from "#styles/components/DesktopMenu.module.css";
 
 export const DesktopMenu = () => {
   const { state } = useSettings();
@@ -22,8 +23,8 @@ export const DesktopMenu = () => {
 
 function MenuLink({ content, slug, state, title }) {
   const [active, setActive] = useState(false);
-  const switchAudio = new Audio("/sounds/switch.mp3");
-  const stageSelectAudio = new Audio("/sounds/stage_select.mp3");
+  const switchAudio = useAudio("/sounds/switch.mp3");
+  const stageSelectAudio = useAudio("/sounds/stage_select.mp3");
 
   const animation = {
     initial: { opacity: 0 },

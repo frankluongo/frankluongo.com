@@ -5,14 +5,15 @@ import { useSettings, toggleSounds } from "../context/settings";
 
 import { Button } from "./Button";
 import { ThemeToggle } from "./ThemeToggle";
+import { useAudio } from "../hooks/useAudio";
 
 import * as css from "#styles/components/SettingsComponent.module.css";
 
 export const SettingsComponent = ({ pause, setToggle }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { state, dispatch } = useSettings();
-  const audioEnabled = new Audio("/sounds/transport_in.mp3");
-  const audioDisabled = new Audio("/sounds/transport_out.mp3");
+  const audioEnabled = useAudio("/sounds/transport_in.mp3");
+  const audioDisabled = useAudio("/sounds/transport_out.mp3");
 
   const settingsElRef = useRef(null);
 
