@@ -21,7 +21,7 @@ const Post = ({ data }) => {
   useEffect(() => {
     const codeBlocks = document.querySelectorAll("code[class]");
     codeBlocks.forEach((block) => {
-      const lang = block.classList[0].split("language-")[1];
+      const lang = block.classList[0]?.split("language-")[1];
       hljs.registerLanguage(lang, langs[lang]);
       hljs.highlightElement(block);
     });

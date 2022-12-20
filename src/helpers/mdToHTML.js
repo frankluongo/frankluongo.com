@@ -1,6 +1,7 @@
 export function mdToHTML(md) {
-  const mdArr = md.split("**");
-  const length = mdArr.length;
+  if (!md || !md.includes("**")) return;
+  const mdArr = md?.split("**");
+  const length = mdArr?.length;
   return mdArr
     .map((text, i) => {
       const pos = i + 1;

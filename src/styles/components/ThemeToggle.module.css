@@ -76,21 +76,6 @@
   transform: translateX(var(--slider-size));
 }
 
-.ThemeToggle {
-  bottom: 0;
-  position: fixed;
-  right: 0;
-  z-index: var(--z-theme-toggle);
-
-  padding-inline: 0.5rem;
-
-  background-color: var(--theme-color-background-default);
-  border: 1px solid var(--theme-color-border-alternate);
-  border-radius: 0.5rem 0 0 0;
-  border-bottom: none;
-  border-right: none;
-}
-
 @media (hover: hover) {
   .SaveColorMode:hover,
   .SaveColorMode:focus {

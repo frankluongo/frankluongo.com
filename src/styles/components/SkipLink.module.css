@@ -1,14 +1,28 @@
 .SkipLink {
-  position: absolute;
   left: -10000px;
+  position: absolute;
   top: auto;
+  z-index: var(--z-skip-link);
+
   width: 1px;
   height: 1px;
+
+  color: var(--color-blue);
+
+  background-color: var(--color-white);
+  border-radius: 0 0 0.5rem 0;
   overflow: hidden;
 }
 
 .SkipLink:focus {
-  position: static;
-  width: auto;
+  top: 0;
+  left: 0;
+
   height: auto;
+  padding: 0.5rem 1rem;
+  width: auto;
+
+  border: 2px solid var(--color-blue);
+  border-left: none;
+  border-top: none;
 }

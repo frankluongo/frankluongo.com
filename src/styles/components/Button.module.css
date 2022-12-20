@@ -18,6 +18,10 @@
   transition: all 150ms ease-in-out;
 }
 
+[data-size="small"] {
+  --padding: 0.5rem 1rem;
+}
+
 @media (hover: hover) {
   .Button:hover,
   .Button:focus {
@@ -32,8 +36,8 @@
 }
 
 @media (hover: hover) {
-  .Button[data-theme="dark"]:hover,
-  .Button[data-theme="dark"]:focus {
+  .Button[data-theme="dark"]:not([data-nohover]):hover,
+  .Button[data-theme="dark"]:not([data-nohover]):focus {
     transform: scale(1.1);
   }
 }

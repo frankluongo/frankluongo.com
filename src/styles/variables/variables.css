@@ -95,7 +95,9 @@
 
   /* ? Z-Index */
   /* ============================================================= */
-  --z-theme-toggle: 5;
+  --z-skip-link: 7;
+  --z-settings-toggle: 6;
+  --z-settings-content: 5;
   --z-header: 4;
   --z-mobile-menu: 3;
   --z-desktop-menu: 2;

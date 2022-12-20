@@ -1,0 +1,38 @@
+.Toggle {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+  color: var(--theme-color-text-default);
+
+  appearance: none;
+  background-color: var(--theme-color-background-default);
+  border: none;
+  border-radius: 0.5rem 0 0 0;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .Toggle:hover svg,
+  .Toggle:focus svg {
+    scale: 1.1;
+    rotate: 30deg;
+  }
+}
+
+.Toggle svg {
+  height: 1.5rem;
+
+  fill: currentColor;
+
+  transition: scale 150ms ease-in-out;
+  transition: rotate 150ms ease-in-out;
+}
+
+.ToggleWrapper {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  z-index: var(--z-settings-toggle);
+}

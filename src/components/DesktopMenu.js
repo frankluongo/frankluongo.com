@@ -6,20 +6,24 @@ import { Link } from "gatsby";
 import { useNav } from "#lib/useNav";
 
 import * as css from "#styles/components/DesktopMenu.module.css";
+import { useSettings } from "../context/settings";
 
 export const DesktopMenu = () => {
+  const { state } = useSettings();
   const links = useNav();
   return (
     <ul className={css.Links} data-display="largeUp">
       {links.map((link) => (
-        <MenuLink key={`${link.id}-desktop`} {...link} />
+        <MenuLink key={`${link.id}-desktop`} {...link} state={state} />
       ))}
     </ul>
   );
 };
 
-function MenuLink({ content, slug, title }) {
+function MenuLink({ content, slug, state, title }) {
   const [active, setActive] = useState(false);
+  const switchAudio = new Audio("/sounds/switch.mp3");
+  const stageSelectAudio = new Audio("/sounds/stage_select.mp3");
 
   const animation = {
     initial: { opacity: 0 },
@@ -36,9 +40,10 @@ function MenuLink({ content, slug, title }) {
       <Link
         className={css.Link}
         to={slug}
-        onClick={() => setActive(false)}
-        onMouseEnter={() => setActive(true)}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
         onMouseLeave={() => setActive(false)}
+        onKeyUp={onKeyUp}
       >
         {title}
       </Link>
@@ -51,4 +56,19 @@ function MenuLink({ content, slug, title }) {
       </AnimatePresence>
     </li>
   );
+
+  function onClick() {
+    state.enableSounds && stageSelectAudio.play();
+    setActive(false);
+  }
+
+  function onKeyUp(e) {
+    if (e.key !== "Tab") return;
+    state.enableSounds && switchAudio.play();
+  }
+
+  function onMouseEnter() {
+    state.userInteracted && state.enableSounds && switchAudio.play();
+    setActive(true);
+  }
 }

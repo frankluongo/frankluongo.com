@@ -1,19 +1,15 @@
 import React from "react";
-import { MobileCtxProvider } from "../presentation/mobileNav";
-import { Footer } from "./Footer";
-import { Header } from "./Header";
-import { SkipLink } from "./SkipLink";
-import { ThemeToggle } from "./ThemeToggle";
+import { MobileCtxProvider } from "../context/mobileNav";
+import { SettingsProvider } from "../context/settings";
+import { App } from "./App";
 
 export const Layout = ({ children }) => {
   return (
-    <MobileCtxProvider>
-      <SkipLink />
-      <Header />
-      <main id="main">{children}</main>
-      <Footer />
-      <ThemeToggle />
-    </MobileCtxProvider>
+    <SettingsProvider>
+      <MobileCtxProvider>
+        <App>{children}</App>
+      </MobileCtxProvider>
+    </SettingsProvider>
   );
 };
 
