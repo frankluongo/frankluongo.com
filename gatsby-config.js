@@ -78,6 +78,8 @@ module.exports = {
         },
       },
     },
+    // Netlify
+    `gatsby-plugin-netlify`,
     // Notion API
     {
       resolve: `gatsby-source-notion-api`,
