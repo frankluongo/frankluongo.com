@@ -1,14 +1,10 @@
-// import { useState } from "react";
-import { isBrowser } from "../helpers/isBrowser";
-
 export function useLocalObjStore(key, initial) {
-  // const [storedValue, setStoredValue] = useState(getInitial());
   const storedValue = getInitial();
 
   return [storedValue, updateObj];
 
   function getInitial() {
-    if (!isBrowser) return initial;
+    if (typeof window === "undefined") return initial;
     try {
       const obj = window.localStorage.getItem(key);
       if (!obj) return initial;
@@ -21,8 +17,7 @@ export function useLocalObjStore(key, initial) {
 
   function updateObj(obj) {
     try {
-      if (!isBrowser) return;
-      // setStoredValue(obj);
+      if (typeof window === "undefined") return;
       window.localStorage.setItem(key, JSON.stringify(obj));
     } catch (e) {
       console.error(e);
