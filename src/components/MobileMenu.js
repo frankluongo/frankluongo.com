@@ -4,13 +4,17 @@ import { useMobileCtx } from "../context/mobileNav";
 
 import { useNav } from "#lib/useNav";
 
-import * as css from "#styles/components/MobileMenu.module.css";
 import { Link } from "gatsby";
 import { Socials } from "./Socials";
+import { useSound } from "../hooks/useSound";
+import { SOUNDS } from "../constants/sounds";
+
+import * as css from "#styles/components/MobileMenu.module.css";
 
 export const MobileMenu = () => {
   const links = useNav();
   const { navOpen } = useMobileCtx();
+  const stageSelectAudio = useSound(SOUNDS.stageSelect);
 
   const animation = {
     initial: { x: "100%" },
@@ -29,7 +33,7 @@ export const MobileMenu = () => {
           <ul className={css.Links}>
             {links.map((link) => (
               <li key={link.id}>
-                <Link className={css.Link} to={link.slug}>
+                <Link className={css.Link} to={link.slug} onClick={onClick}>
                   <div className={css.LinkTitle}>{link.titleMobile}</div>
                   <span className={css.LinkDescription}>{link.content}</span>
                 </Link>
@@ -41,4 +45,8 @@ export const MobileMenu = () => {
       )}
     </AnimatePresence>
   );
+
+  function onClick() {
+    stageSelectAudio();
+  }
 };

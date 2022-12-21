@@ -6,7 +6,9 @@ import { Link } from "gatsby";
 import { useNav } from "#lib/useNav";
 
 import { useSettings } from "../context/settings";
-import { useAudio } from "../hooks/useAudio";
+import { useSound } from "../hooks/useSound";
+import { SOUNDS } from "../constants/sounds";
+
 import * as css from "#styles/components/DesktopMenu.module.css";
 
 export const DesktopMenu = () => {
@@ -23,8 +25,8 @@ export const DesktopMenu = () => {
 
 function MenuLink({ content, slug, state, title }) {
   const [active, setActive] = useState(false);
-  const switchAudio = useAudio("/sounds/switch.mp3");
-  const stageSelectAudio = useAudio("/sounds/stage_select.mp3");
+  const switchAudio = useSound(SOUNDS.switch);
+  const stageSelectAudio = useSound(SOUNDS.stageSelect);
 
   const animation = {
     initial: { opacity: 0 },
@@ -59,17 +61,17 @@ function MenuLink({ content, slug, state, title }) {
   );
 
   function onClick() {
-    state.enableSounds && stageSelectAudio.play();
+    stageSelectAudio();
     setActive(false);
   }
 
   function onKeyUp(e) {
     if (e.key !== "Tab") return;
-    state.enableSounds && switchAudio.play();
+    switchAudio();
   }
 
   function onMouseEnter() {
-    state.userInteracted && state.enableSounds && switchAudio.play();
+    state.userInteracted && switchAudio();
     setActive(true);
   }
 }

@@ -2,14 +2,19 @@ import React from "react";
 import { useMobileCtx } from "../context/mobileNav";
 import { MobileMenu } from "./MobileMenu";
 
+import { useSound } from "../hooks/useSound";
+import { SOUNDS } from "../constants/sounds";
+
 import * as css from "#styles/components/MobileToggle.module.css";
 
 export const MobileToggle = () => {
   const { navOpen, setNavOpen } = useMobileCtx();
   const label = navOpen ? "Close" : "Menu";
   const MobileIcon = navOpen ? MobileToggleClose : MobileToggleOpen;
+  const switchAudio = useSound(SOUNDS.switch);
 
   function onToggle() {
+    switchAudio();
     setNavOpen(!navOpen);
   }
 

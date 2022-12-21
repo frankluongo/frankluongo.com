@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { useSettings } from "../context/settings";
 
 import { SettingsComponent } from "./SettingsComponent";
-import { useAudio } from "../hooks/useAudio";
+import { useSound } from "../hooks/useSound";
+import { SOUNDS } from "../constants/sounds";
 
 import * as css from "#styles/components/Settings.module.css";
 
 export const SettingsToggle = () => {
-  const { state } = useSettings();
   const [toggle, setToggle] = useState(false);
-  const pause = useAudio("/sounds/pause_menu.mp3");
+  const pauseAudio = useSound(SOUNDS.pause);
 
   return (
     <>
@@ -26,13 +25,13 @@ export const SettingsToggle = () => {
         </button>
       </article>
       <AnimatePresence>
-        {toggle && <SettingsComponent setToggle={setToggle} pause={pause} />}
+        {toggle && <SettingsComponent setToggle={setToggle} />}
       </AnimatePresence>
     </>
   );
 
   function onToggle() {
-    state.enableSounds && pause.play();
+    pauseAudio();
     setToggle(!toggle);
   }
 };

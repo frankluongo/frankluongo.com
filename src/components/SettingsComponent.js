@@ -6,14 +6,17 @@ import { useSettings, toggleSounds } from "../context/settings";
 import { Button } from "./Button";
 import { ThemeToggle } from "./ThemeToggle";
 import { useAudio } from "../hooks/useAudio";
+import { SOUNDS } from "../constants/sounds";
+import { useSound } from "../hooks/useSound";
 
 import * as css from "#styles/components/SettingsComponent.module.css";
 
-export const SettingsComponent = ({ pause, setToggle }) => {
+export const SettingsComponent = ({ setToggle }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { state, dispatch } = useSettings();
-  const audioEnabled = useAudio("/sounds/transport_in.mp3");
-  const audioDisabled = useAudio("/sounds/transport_out.mp3");
+  const audioEnabled = useAudio(SOUNDS.transportIn);
+  const audioDisabled = useAudio(SOUNDS.transportOut);
+  const pauseAudio = useSound(SOUNDS.pause);
 
   const settingsElRef = useRef(null);
 
@@ -35,23 +38,23 @@ export const SettingsComponent = ({ pause, setToggle }) => {
   useEffect(() => {
     function onEsc(e) {
       if (e.key !== "Escape") return;
-      state.enableSounds && pause.play();
+      pauseAudio();
       setToggle(false);
     }
     document.addEventListener("keyup", onEsc);
     return () => document.removeEventListener("keyup", onEsc);
-  }, [pause, state.enableSounds, setToggle]);
+  }, [pauseAudio, setToggle]);
 
   useEffect(() => {
     function onClick(e) {
       const settingsEl = settingsElRef.current;
       if (!isLoaded || !settingsEl || settingsEl.contains(e.target)) return;
-      state.enableSounds && pause.play();
+      pauseAudio();
       setToggle(false);
     }
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
-  }, [pause, state.enableSounds, setToggle, isLoaded]);
+  }, [pauseAudio, setToggle, isLoaded]);
 
   return (
     <motion.section className={css.SettingsWrapper} {...animation}>
@@ -77,7 +80,7 @@ export const SettingsComponent = ({ pause, setToggle }) => {
   );
 
   function toggleSoundsFn() {
-    state.enableSounds ? audioEnabled.play() : audioDisabled.play();
+    state.enableSounds ? audioDisabled.play() : audioEnabled.play();
     dispatch({ type: toggleSounds });
   }
 };

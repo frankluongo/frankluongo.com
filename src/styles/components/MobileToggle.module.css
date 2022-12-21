@@ -20,9 +20,9 @@
 }
 
 .MobileToggle[aria-expanded="false"] svg {
-  fill: var(--theme-color-text-alternate);
+  fill: var(--color-white);
 }
 
 .MobileToggle[aria-expanded="true"] svg {
-  fill: var(--theme-color-text-alternate);
+  fill: var(--color-white);
 }
