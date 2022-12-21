@@ -31,7 +31,7 @@ export const SettingsToggle = () => {
   );
 
   function onToggle() {
-    pauseAudio();
     setToggle(!toggle);
+    pauseAudio();
   }
 };

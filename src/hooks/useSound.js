@@ -8,6 +8,8 @@ export function useSound(path) {
   return playSound;
 
   function playSound() {
+    console.log("playing sound...");
+    if (!audio) return;
     state.enableSounds && audio.play();
   }
 }
