@@ -55,7 +55,7 @@
   --box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   --drop-shadow: drop-shadow(0px 1px 4px rgba(39, 35, 33, 0.1));
   --header-height: 3rem;
-  --max-width: 1200px;
+  --max-width: 92rem;
   --transition-easing: ease-in-out;
   --transition-timing: 150ms;
   --transition-opacity: opacity var(--transition-timing)
@@ -69,8 +69,12 @@
   /*
   font: font-style font-variant font-weight font-size/line-height font-family
   */
-  --font-h1: normal 900 2rem/1.1 var(--font-primary);
-  --font-h2: normal 1.5rem/1.1 var(--font-primary);
+
+  --fs-medium: 0.9rem;
+  --fs-large: 1.2rem;
+
+  --font-h1: normal 900 2rem/1.2 var(--font-primary);
+  --font-h2: normal 900 1.5rem/1.1 var(--font-primary);
   --font-h3: normal 900 1.125rem/1.1 var(--font-primary);
   --font-h4: normal 900 1rem/1.1 var(--font-primary);
   --font-h5: normal 900 0.875rem/1.1 var(--font-primary);
@@ -103,16 +107,39 @@
   --z-desktop-menu: 2;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   :root {
-    --font-h1: normal 900 3rem/1.1 var(--font-primary);
-    --font-h2: normal 1.75rem/1.1 var(--font-primary);
+    --fs-medium: 1.25rem;
+    --fs-large: 1.5rem;
+
+    --font-h1: normal 900 3.5rem/1.2 var(--font-primary);
+    --font-h2: normal 900 2.5rem/1.2 var(--font-primary);
     --font-h3: normal 900 1.5rem/1.1 var(--font-primary);
     --font-h4: normal 900 1.125rem/1.1 var(--font-primary);
     --font-h5: normal 900 1rem/1.1 var(--font-primary);
     --font-h6: normal 900 0.875rem/1.1 var(--font-primary);
     --font-paragraph: normal 400 1rem/1.618 var(--font-primary);
     --font-small: normal 400 0.625rem/1.618 var(--font-primary);
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --fs-medium: 1.5rem;
+    --fs-large: 2rem;
+
+    --font-h1: normal 900 4.5rem/1.2 var(--font-primary);
+    --font-h2: normal 900 3rem/1.2 var(--font-primary);
+    --font-h3: normal 900 2rem/1.1 var(--font-primary);
+    --font-h4: normal 900 1.125rem/1.1 var(--font-primary);
+    --font-h5: normal 900 1rem/1.1 var(--font-primary);
+    --font-h6: normal 900 0.875rem/1.1 var(--font-primary);
+    --font-paragraph: normal 400 1rem/1.618 var(--font-primary);
+    --font-small: normal 400 0.625rem/1.618 var(--font-primary);
+  }
+
+  :root [data-blog-page] {
+    --font-h1: normal 900 3.5rem/1.2 var(--font-primary);
   }
 }
 

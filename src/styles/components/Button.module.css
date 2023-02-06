@@ -7,15 +7,19 @@
   padding: var(--padding);
 
   color: var(--color);
+  font-family: var(--font-primary);
   font-weight: bold;
   font-size: 14px;
-  text-align: center;
   text-decoration: none;
 
   background: var(--background);
   border-radius: 3px;
   cursor: pointer;
   transition: all 150ms ease-in-out;
+}
+
+[data-size="tiny"] {
+  --padding: 0;
 }
 
 [data-size="small"] {
@@ -35,9 +39,20 @@
   --color: var(--color-white);
 }
 
+.Button[data-theme="naked"] {
+  --background: var(--color-white);
+  --color: var(--color-blue);
+  border: none;
+
+  text-align: left;
+}
+
 @media (hover: hover) {
   .Button[data-theme="dark"]:not([data-nohover]):hover,
   .Button[data-theme="dark"]:not([data-nohover]):focus {
-    transform: scale(1.1);
+    --background: var(--color-white);
+    --color: var(--color-blue);
+
+    outline: 2px solid var(--color-teal);
   }
 }

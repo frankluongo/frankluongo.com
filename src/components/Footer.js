@@ -6,8 +6,6 @@ import { useMeta } from "#lib/useMeta";
 import { useNav } from "#lib/useNav";
 
 import { Availability } from "#components/Availability";
-import { Logo } from "#components/Logo";
-import { Socials } from "./Socials";
 
 import * as css from "#styles/components/Footer.module.css";
 
@@ -19,28 +17,60 @@ export const Footer = () => {
 
   return (
     <>
-      <footer className={css.Footer}>
-        <h2 data-a11y-hidden>Website Footer</h2>
-        <section className="container flex flex-direction:column gap:2">
-          <header>
-            <Logo type="color-white" />
+      <footer className={`${css.Footer} padding-block:section`}>
+        <div className="container gap grid grid:12">
+          <header className="col:12 md:col:6 flex col gap:tight">
+            <h2 className="h3">Frank Luongo Design Co.</h2>
+            <p className="color:gray-2">
+              Freelance Website developer based in Clarks Summit, PA and
+              servicing the surrounding areas, as well as the entire United
+              States.
+            </p>
           </header>
-          <section className="grid gap:1 grid:cols-3">
-            <article className="flex flex-direction:column gap:0.5">
-              <p className="smaller">{meta.businessName.title}</p>
-              <p className="smaller">{meta.businessLocation.title}</p>
-            </article>
-            <article className="flex flex-direction:column gap:0.5">
-              <p className="smaller">{meta.businessEmail.title}</p>
-              <p className="smaller">{meta.businessPhone.title}</p>
-            </article>
-            <article>
-              <Availability extraClasses="" />
-            </article>
+          <section className="col:12 md:col:6 flex col gap:tight">
+            <h2 className="h3">Get in touch</h2>
+            <a
+              href="mailto:frank@frankluongo.com"
+              className="color:gray-3 link"
+            >
+              frank@frankluongo.com
+            </a>
+            <a
+              href={`tel:+1${meta.businessPhone.title}`}
+              className="color:gray-3 link"
+            >
+              {meta.businessPhone.title}
+            </a>
+            <div className="flex gap:tight">
+              <a
+                href="mailto:frank@frankluongo.com"
+                className="color:gray-3 link"
+                title="Send me an email!"
+              >
+                ✉️ Email
+              </a>
+              <span>/</span>
+              <a
+                href="https://github.com/frankluongo"
+                className="color:gray-3 link"
+                title="Check out my GitHub"
+              >
+                🐙 GitHub
+              </a>
+              <span>/</span>
+              <a
+                href="https://www.instagram.com/_frankluongo/"
+                className="color:gray-3 link"
+                title="Check out my Instagram"
+              >
+                📷 Instagram
+              </a>
+            </div>
+            <Availability extraClasses="" />
           </section>
-          <section className="flex flex-direction:column gap:0.5">
+          <section className="col:12 md:col:6 flex col gap:tight">
             <header>
-              <h3>Sitemap</h3>
+              <h2 className="h3">Sitemap</h2>
             </header>
             <ul className="flex align-items:center gap:1">
               {links.map((link) => (
@@ -52,13 +82,7 @@ export const Footer = () => {
               ))}
             </ul>
           </section>
-          <section className="flex flex-direction:column gap:0.5">
-            <header>
-              <h3>Connect</h3>
-            </header>
-            <Socials />
-          </section>
-        </section>
+        </div>
       </footer>
       <section className={css.Copyright}>
         <div

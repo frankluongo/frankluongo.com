@@ -24,7 +24,7 @@ const RefreshPage = () => {
   const url = process.env.GATSBY_NETLIFY_WEBHOOK;
   const [sentStatus, setSentStatus] = useState(INITIAL);
   return (
-    <section className="container container--blog page-body flex flex-direction:column gap:1">
+    <section className="container container--blog page-body flex col gap:1">
       <h2>Congrats</h2>
       <p>You've made it to my refresh page.</p>
       <p>

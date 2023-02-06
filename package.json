@@ -16,6 +16,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@frankluongo/css-starter": "^1.0.0",
     "@mdx-js/react": "^2.1.5",
     "framer-motion": "^7.6.15",
     "gatsby": "^5.2.0",

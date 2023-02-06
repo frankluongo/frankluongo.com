@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 
 import { useMeta } from "#lib/useMeta";
 
-import { mdToHTML } from "../helpers/mdToHTML";
 import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 import { Availability } from "../components/Availability";
@@ -18,26 +17,30 @@ const BlogPage = (props) => {
   const data = objectifyNotionData(props.data.allNotion.nodes);
   const { businessEmail } = useMeta();
 
-  const __html = mdToHTML(data.heroHeadline.properties.content.value);
-
   return (
     <>
       <h1 data-a11y-hidden>{TITLE}</h1>
       <Hero
         path={data.heroImage.properties.imagePath.value}
         alt="Blog Page"
-        extraStyles={{ heroContent: "color-white" }}
+        extraStyles={{ heroContent: "color:white grid grid:12 gap" }}
       >
-        <h2 dangerouslySetInnerHTML={{ __html }} />
-        <p>{data.heroSubheading.properties.content.value}</p>
-        <Availability />
-        <div>
-          <Button href={`mailto:${businessEmail.title}`}>
-            {businessEmail.title}
-          </Button>
+        <div className="col:12 md:col:9 flex col gap:1">
+          <div className="flex col gap:0.5">
+            <h1>{data.heroHeadline.properties.content.value}</h1>
+            <p className="large color:gray-1">
+              {data.heroSubheading.properties.content.value}
+            </p>
+            <Availability />
+          </div>
+          <div>
+            <Button href={`mailto:${businessEmail.title}`}>
+              {businessEmail.title}
+            </Button>
+          </div>
         </div>
       </Hero>
-      <section className="container page-body flex flex-direction:column gap:2">
+      <section className="container page-body flex col gap:2">
         <header>
           <h3>Articles &amp; Whatnot</h3>
         </header>

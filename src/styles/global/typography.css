@@ -39,6 +39,14 @@ li {
   font: var(--font-smaller);
 }
 
+.medium {
+  font-size: var(--fs-medium);
+}
+
+.large {
+  font-size: var(--fs-large);
+}
+
 .link {
   color: var(--theme-color-link-default);
   font-weight: 600;
@@ -57,18 +65,6 @@ strong {
   ? Helpers
   * =================================================================
 */
-
-.color-white {
-  color: var(--color-white);
-}
-
-.color\:--text-default {
-  color: var(--theme-color-text-default);
-}
-
-.color-text-alternate {
-  color: var(--theme-color-text-alternate);
-}
 
 .text-align\:center {
   text-align: center;

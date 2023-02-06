@@ -14,29 +14,22 @@
 
 .container {
   --mw: var(--max-width);
+  --padding: 1rem;
 
   margin-inline: auto;
   max-width: var(--mw);
   width: 100%;
-  padding-inline: 1rem;
+  padding-inline: var(--padding);
+}
+
+@media (min-width: 700px) {
+  .container {
+    --padding: 2rem;
+  }
 }
 
 .container--blog {
   --mw: var(--blog-max-width);
-}
-
-/* 
-  ? Flex
-  All flex-related styling
-  * =================================================================
-*/
-
-.flex {
-  display: flex;
-}
-
-.flex-direction\:column {
-  flex-direction: column;
 }
 
 /* 
@@ -67,9 +60,56 @@
   * =================================================================
 */
 
-.grid {
+/* DA GRID */
+.griddy {
   display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
 }
+
+.columns\:1 {
+  grid-column: span 1;
+}
+.columns\:2 {
+  grid-column: span 2;
+}
+.columns\:3 {
+  grid-column: span 3;
+}
+.columns\:4 {
+  grid-column: span 4;
+}
+
+@media (min-width: 700px) {
+  .sm\:columns\:1 {
+    grid-column: span 1;
+  }
+  .sm\:columns\:2 {
+    grid-column: span 2;
+  }
+  .sm\:columns\:3 {
+    grid-column: span 3;
+  }
+  .sm\:columns\:4 {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 1000px) {
+  .md\:columns\:1 {
+    grid-column: span 1;
+  }
+  .md\:columns\:2 {
+    grid-column: span 2;
+  }
+  .md\:columns\:3 {
+    grid-column: span 3;
+  }
+  .md\:columns\:4 {
+    grid-column: span 4;
+  }
+}
+
 /* 
   ? Grid: Strict Columns
   Always split in half, regardless of browser size

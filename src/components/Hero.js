@@ -25,7 +25,7 @@ export const Hero = ({ alt, children, extraStyles, path }) => {
         <GatsbyImage image={image} alt={alt} />
       </figure>
       <div
-        className={`${css.HeroContent} ${extraCss.heroContent}`}
+        className={`${css.HeroContent} ${extraCss.heroContent} container`}
         data-container
       >
         {children}

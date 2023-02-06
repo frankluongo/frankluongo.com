@@ -9,10 +9,6 @@
 }
 
 .Footer {
-  --block-padding: 3rem;
-
-  padding-block: var(--block-padding);
-
   color: var(--color-white);
 
   background-color: var(--color-black-full);
@@ -20,18 +16,4 @@
 
 .Footer a {
   color: var(--color-white);
-}
-
-.GridThree {
-  --column-width: 20rem;
-
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
-}
-
-@media (min-width: 700px) {
-  .Footer {
-    --block-padding: 6rem;
-  }
 }

@@ -5,7 +5,6 @@
 */
 
 @import "./base/imports.css";
-@import "./base/reset.css";
 
 /* 
   ? SECTION 02: Variables
@@ -29,9 +28,11 @@
   * =================================================================
 */
 
+@import "./appearance/background-color.css";
 @import "./appearance/images.css";
 @import "./appearance/lists.css";
 @import "./appearance/main.css";
+@import "./appearance/text-color.css";
 
 /* 
   ? SECTION 05: Helpers
@@ -48,3 +49,9 @@
 */
 
 @import "./grid/grid.css";
+
+@import "./spacing/spacing.css";
+
+.fpo {
+  background-color: var(--color-gray-1);
+}

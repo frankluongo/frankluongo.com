@@ -1,3 +1,7 @@
+.video {
+  max-width: 100%;
+}
+
 .normal-image-wrapper {
   position: relative;
 
@@ -12,4 +16,12 @@
 
   height: 100%;
   width: 100%;
+}
+
+.has-background-image {
+  background-color: var(--color-yellow);
+
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

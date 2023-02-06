@@ -22,7 +22,7 @@ export const Availability = ({ extraClasses }) => {
 };
 
 Availability.defaultProps = {
-  extraClasses: "justify-content:center",
+  extraClasses: "",
 };
 
 function Checkmark() {

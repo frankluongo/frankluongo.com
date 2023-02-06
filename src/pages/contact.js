@@ -28,26 +28,32 @@ const ContactPage = (props) => {
       <Hero
         path={data.heroImage.properties.imagePath.value}
         alt="Contact Page"
-        extraStyles={{ heroContent: "color-white" }}
+        extraStyles={{ heroContent: "color:white grid grid:12 gap" }}
       >
-        <h2 dangerouslySetInnerHTML={{ __html }} />
-        <p>{data.heroSubheading.properties.content.value}</p>
-        <Availability />
-        <div>
-          <Button href={`mailto:${businessEmail.title}`}>
-            {businessEmail.title}
-          </Button>
+        <div className="col:12 md:col:9 flex col gap:1">
+          <div className="flex col gap:0.5">
+            <h1 dangerouslySetInnerHTML={{ __html }} />
+            <p className="large color:gray-1">
+              {data.heroSubheading.properties.content.value}
+            </p>
+            <Availability />
+          </div>
+          <div>
+            <Button href={`mailto:${businessEmail.title}`}>
+              {businessEmail.title}
+            </Button>
+          </div>
         </div>
       </Hero>
       <section className="container page-body grid gap:2 grid:cols-2">
-        <div className="flex flex-direction:column gap:1">
+        <div className="flex col gap:1">
           <h3>{data.aboutMeHeadline.properties.content.value}</h3>
           <Markup
             Tag="article"
             content={data.aboutMeText.childMarkdownRemark.html}
           />
         </div>
-        <div className="flex flex-direction:column gap:1">
+        <div className="flex col gap:1">
           <h3>{data.highlightsHeadline.properties.content.value}</h3>
           <Likes />
           <h3>Where to find me</h3>

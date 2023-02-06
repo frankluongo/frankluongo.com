@@ -26,18 +26,24 @@ const ProjectsPage = (props) => {
       <Hero
         path={data.heroImage.properties.imagePath.value}
         alt="Projects"
-        extraStyles={{ heroContent: "color-white" }}
+        extraStyles={{ heroContent: "color:white grid grid:12 gap" }}
       >
-        <h2 dangerouslySetInnerHTML={{ __html }} />
-        <p>{data.heroSubheading.properties.content.value}</p>
-        <Availability />
-        <div>
-          <Button href={`mailto:${businessEmail.title}`}>
-            {businessEmail.title}
-          </Button>
+        <div className="col:12 md:col:9 flex col gap:1">
+          <div className="flex col gap:0.5">
+            <h1 dangerouslySetInnerHTML={{ __html }} />
+            <p className="large color:gray-1">
+              {data.heroSubheading.properties.content.value}
+            </p>
+            <Availability />
+          </div>
+          <div>
+            <Button href={`mailto:${businessEmail.title}`}>
+              {businessEmail.title}
+            </Button>
+          </div>
         </div>
       </Hero>
-      <div className="container page-body flex flex-direction:column gap:3">
+      <div className="container page-body flex col gap:3">
         <ProjectsPreview />
       </div>
     </>

@@ -28,7 +28,10 @@ const Post = ({ data }) => {
   }, [langs]);
 
   return (
-    <div className="container container--blog page-body flex flex-direction:column gap:2">
+    <div
+      className="container container--blog page-body flex col gap:2"
+      data-blog-page
+    >
       <header>
         <h1>{rawTitle}</h1>
       </header>

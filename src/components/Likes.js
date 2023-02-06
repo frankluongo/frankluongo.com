@@ -5,8 +5,8 @@ export const Likes = () => {
   const { dislikes, likes } = useLikesList();
 
   return (
-    <section className="grid gap:1 grid:1/1">
-      <div className="block-gap:1">
+    <section className="griddy">
+      <div className="block-gap:1 columns:2">
         <header>
           <h4>Likes</h4>
         </header>
@@ -18,7 +18,7 @@ export const Likes = () => {
           ))}
         </ul>
       </div>
-      <div className="block-gap:1">
+      <div className="block-gap:1 columns:2">
         <header>
           <h4>Dislikes</h4>
         </header>

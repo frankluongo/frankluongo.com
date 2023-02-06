@@ -60,11 +60,11 @@ export const SettingsComponent = ({ setToggle }) => {
     <motion.section className={css.SettingsWrapper} {...animation}>
       <article className={css.Settings} ref={settingsElRef}>
         <h2>Settings</h2>
-        <section className="flex flex-direction:column gap:1">
+        <section className="flex col gap:1">
           <h3 className="h4">Toggle Dark/Light Mode</h3>
           <ThemeToggle />
         </section>
-        <section className="flex flex-direction:column gap:1">
+        <section className="flex col gap:1">
           <h3 className="h4">Enable/Disable sounds</h3>
           <Button
             onClick={toggleSoundsFn}

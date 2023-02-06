@@ -1,0 +1,26 @@
+.Number {
+  --offset: -1rem;
+  --size: 2rem;
+
+  left: var(--offset);
+  position: absolute;
+  top: var(--offset);
+  z-index: 2;
+
+  align-items: center;
+  display: flex;
+  height: var(--size);
+  justify-content: center;
+  width: var(--size);
+
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-2);
+  border-radius: 50%;
+}
+
+@media (min-width: 700px) {
+  .Number {
+    --offset: -1.5rem;
+    --size: 3rem;
+  }
+}

@@ -19,7 +19,7 @@ export const PostsPreview = () => {
 };
 
 function PostPreview(post) {
-  const linkClasses = classes([css.Link, "flex flex-direction:column gap:0.5"]);
+  const linkClasses = classes([css.Link, "flex col gap:0.5"]);
   const title = post.title.replaceAll("**", "");
 
   return (

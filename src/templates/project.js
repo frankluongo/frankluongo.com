@@ -24,11 +24,11 @@ const Project = ({ data }) => {
       <Hero
         path={data.notion.properties.imagePath.value}
         alt={data.notion.title}
-        extraStyles={{ heroContent: "color-white" }}
+        extraStyles={{ heroContent: "color:white" }}
       >
         <h2 className="h1">{data.notion.title}</h2>
       </Hero>
-      <div className="container container--blog page-body flex flex-direction:column gap:2">
+      <div className="container container--blog page-body flex col gap:2">
         <BlogPost dangerouslySetInnerHTML={{ __html }} />
       </div>
     </>

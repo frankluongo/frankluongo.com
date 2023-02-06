@@ -1,0 +1,23 @@
+.ProjectsHeader {
+  position: relative;
+}
+
+.ProjectsHeaderText {
+  position: relative;
+}
+
+.ProjectsHeaderBg {
+  --left: -30vw;
+  --offset: -2.5rem;
+  --height: 7.5rem;
+
+  left: var(--left);
+  position: absolute;
+  top: var(--offset);
+
+  height: var(--height);
+  width: 100vw;
+
+  background-color: var(--color-yellow);
+  transform: rotate(-2deg);
+}

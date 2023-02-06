@@ -1,5 +1,5 @@
 .Hero {
-  --min-height: 320px;
+  --min-height: calc(95vh - var(--header-height));
 
   position: relative;
 
@@ -11,19 +11,8 @@
   overflow: hidden;
 }
 
-.Hero p {
-  margin-inline: auto;
-  max-width: 27.5rem;
-}
-
 .HeroContent {
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  text-align: center;
 }
 
 .HeroImage,
@@ -41,10 +30,4 @@
 
   background-color: rgba(0, 0, 0, 0.5);
   content: "";
-}
-
-@media (min-width: 700px) {
-  .Hero {
-    --min-height: 480px;
-  }
 }
