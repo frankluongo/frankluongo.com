@@ -1,33 +1,26 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Button } from "../components/Button";
+import { EmailMe } from "../components/EmailMe";
+import { useSlices } from "../lib/useSlices";
 
 export const Cost = () => {
+  const cost = useSlices("cost");
   return (
     <div className="background:gray-to-black padding-block:section">
       <section className="container grid grid:12 gap align-items:center">
         <article className="col:12 md:col:7 color:gray-1 flex col gap:wide">
           <header>
-            <h2 className="color:yellow">
-              How much does it cost to hire a freelance website developer?
-            </h2>
-            <p className="medium color:gray-2">
-              This is a big question, and I'd love to give a simple answer, but
-              it kinda-sorta depends.
-            </p>
+            <h2 className="color:yellow">{cost.headline.title}</h2>
+            <p className="medium color:gray-2">{cost.subheading.title}</p>
           </header>
           <div className="flex col gap">
-            <p>
-              There are several factors that contribute to the overall cost of
-              of your project. Timeline, scope of work, and clarity of that
-              scope will determine whether a project will be billed hourly,
-              billed at a flat rate, or done as a hybrid of both.
-            </p>
-            <p>
-              With that said, I realize a lof the terms above sound like jargon.
-              So, I've written this blog article detailing exactly what this all
-              means.
-            </p>
+            <article
+              className="flex col gap"
+              dangerouslySetInnerHTML={{
+                __html: cost.description.childMarkdownRemark.html,
+              }}
+            />
             <div className="flex gap">
               <Button
                 Tag={Link}
@@ -35,9 +28,7 @@ export const Cost = () => {
               >
                 Read the article
               </Button>
-              <Button href={`mailto:frank@frankluongo.com`} data-theme="dark">
-                Get the TL;DR from me
-              </Button>
+              <EmailMe data-theme="dark">Get the TL;DR from me</EmailMe>
             </div>
           </div>
         </article>
@@ -48,11 +39,9 @@ export const Cost = () => {
             controls={false}
             muted={true}
             loop={true}
+            title={cost.meme.properties.content.value}
           >
-            <source
-              src="https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.mp4"
-              type="video/mp4"
-            />
+            <source src={cost.meme.properties.URL.value} type="video/mp4" />
           </video>
         </aside>
       </section>

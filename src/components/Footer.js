@@ -8,6 +8,7 @@ import { useNav } from "#lib/useNav";
 import { Availability } from "#components/Availability";
 
 import * as css from "#styles/components/Footer.module.css";
+import { EmailMe } from "./EmailMe";
 
 export const Footer = () => {
   const meta = useMeta();
@@ -29,12 +30,9 @@ export const Footer = () => {
           </header>
           <section className="col:12 md:col:6 flex col gap:tight">
             <h2 className="h3">Get in touch</h2>
-            <a
-              href="mailto:frank@frankluongo.com"
-              className="color:gray-3 link"
-            >
-              frank@frankluongo.com
-            </a>
+            <EmailMe className="color:gray-3 link" Tag="a">
+              {meta.businessEmail.title}
+            </EmailMe>
             <a
               href={`tel:+1${meta.businessPhone.title}`}
               className="color:gray-3 link"
@@ -42,13 +40,13 @@ export const Footer = () => {
               {meta.businessPhone.title}
             </a>
             <div className="flex gap:tight">
-              <a
-                href="mailto:frank@frankluongo.com"
+              <EmailMe
                 className="color:gray-3 link"
                 title="Send me an email!"
+                Tag="a"
               >
                 ✉️ Email
-              </a>
+              </EmailMe>
               <span>/</span>
               <a
                 href="https://github.com/frankluongo"
