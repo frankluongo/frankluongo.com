@@ -32,7 +32,7 @@ export const Projects = () => {
         {projectPreview.map((key) => {
           const prev = projects.project[key];
           return (
-            <Tile extraClasses="grid gap grid:12">
+            <Tile key={key} extraClasses="grid gap grid:12">
               <div className="padding:1 md:padding:2 flex col gap:1 col:8">
                 <h3 className="color:link">{prev.heading.title}</h3>
                 {prev?.readMore ? (

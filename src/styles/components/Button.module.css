@@ -1,7 +1,7 @@
 .Button {
   --padding: 1rem 1.5rem;
   --background: var(--color-white);
-  --color: var(--color-teal);
+  --color: var(--color-blue);
 
   display: inline-block;
   padding: var(--padding);

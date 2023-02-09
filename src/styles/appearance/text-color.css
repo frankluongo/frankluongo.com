@@ -30,6 +30,10 @@
   color: var(--color-yellow);
 }
 
+.color\:yellow-on-white {
+  color: var(--color-yellow-on-white);
+}
+
 .color\:--text-default {
   color: var(--theme-color-text-default);
 }

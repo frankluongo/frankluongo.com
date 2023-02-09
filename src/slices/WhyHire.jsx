@@ -35,7 +35,10 @@ export const WhyHire = () => {
             >
               <header className="flex gap:0.5 align-items:center">
                 <strong
-                  className={classes([css.Number, "medium color:yellow"])}
+                  className={classes([
+                    css.Number,
+                    "medium color:yellow-on-white",
+                  ])}
                 >
                   0{key}
                 </strong>
