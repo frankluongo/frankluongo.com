@@ -34,6 +34,16 @@
   color: var(--color-yellow-on-white);
 }
 
+/* Theme Colors */
+
+.color\:subheading {
+  color: var(--theme-color-subheading-default);
+}
+
+.color\:theme-yellow {
+  color: var(--theme-color-yellow);
+}
+
 .color\:--text-default {
   color: var(--theme-color-text-default);
 }

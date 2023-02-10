@@ -89,14 +89,15 @@
   --theme-color-background-alternate: var(--color-black);
   --theme-color-background-default: var(--color-white);
   --theme-color-border-alternate: var(--color-gray-2);
-  --theme-color-border-default: var(--color-gray-5);
+  --theme-color-border-default: var(--color-gray-2);
   --theme-color-border-light: var(--color-gray-4);
   --theme-color-link-alternate: var(--color-teal);
   --theme-color-link-default: var(--color-blue);
   --theme-color-subheading-alternate: var(--color-gray-1);
-  --theme-color-subheading-default: var(--color-gray-2);
+  --theme-color-subheading-default: var(--color-gray-4);
   --theme-color-text-alternate: var(--color-white);
   --theme-color-text-default: var(--color-black);
+  --theme-color-yellow: var(--color-yellow-on-white);
 
   /* ? Z-Index */
   /* ============================================================= */
@@ -160,23 +161,8 @@
   --theme-color-link-alternate: var(--color-blue);
   --theme-color-link-default: var(--color-teal-on-dark);
   --theme-color-subheading-alternate: var(--color-gray-1);
-  --theme-color-subheading-default: var(--color-gray-3);
+  --theme-color-subheading-default: var(--color-gray-2);
   --theme-color-text-alternate: var(--color-black);
   --theme-color-text-default: var(--color-white);
-}
-
-/* * COLOR MODES: Light */
-:root.is-light {
-  --drop-shadow: drop-shadow(0px 1px 4px rgba(39, 35, 33, 0.1));
-  --theme-color-background-alternate: var(--color-black);
-  --theme-color-background-default: var(--color-white);
-  --theme-color-border-alternate: var(--color-gray-2);
-  --theme-color-border-default: var(--color-gray-5);
-  --theme-color-border-light: var(--color-gray-4);
-  --theme-color-link-alternate: var(--color-teal);
-  --theme-color-link-default: var(--color-blue);
-  --theme-color-subheading-alternate: var(--color-gray-1);
-  --theme-color-subheading-default: var(--color-gray-2);
-  --theme-color-text-alternate: var(--color-white);
-  --theme-color-text-default: var(--color-black);
+  --theme-color-yellow: var(--color-yellow);
 }

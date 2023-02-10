@@ -4,6 +4,8 @@
 
 .ProjectsHeaderText {
   position: relative;
+
+  color: var(--color-black);
 }
 
 .ProjectsHeaderBg {

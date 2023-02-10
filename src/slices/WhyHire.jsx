@@ -35,17 +35,14 @@ export const WhyHire = () => {
             >
               <header className="flex gap:0.5 align-items:center">
                 <strong
-                  className={classes([
-                    css.Number,
-                    "medium color:yellow-on-white",
-                  ])}
+                  className={classes([css.Number, "medium color:theme-yellow"])}
                 >
                   0{key}
                 </strong>
                 <h3 className="color:link">{reason.heading.title}</h3>
               </header>
               <div
-                className="color:gray-4"
+                className="color:subheading"
                 dangerouslySetInnerHTML={{
                   __html: reason.description.childMarkdownRemark.html,
                 }}

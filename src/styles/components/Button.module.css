@@ -40,8 +40,8 @@
 }
 
 .Button[data-theme="naked"] {
-  --background: var(--color-white);
-  --color: var(--color-blue);
+  --background: transparent;
+  --color: var(--theme-color-link-default);
   border: none;
 
   text-align: left;
