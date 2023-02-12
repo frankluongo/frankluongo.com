@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button } from "#components/Button";
+import { Button } from "#common/Button";
 
 const FAILURE = "failure";
 const INITIAL = "initial";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Button } from "../components/Button";
-import { EmailMe } from "../components/EmailMe";
+import { Button } from "#common/Button";
+import { EmailMe } from "#features/EmailMe";
 import { useSlices } from "../lib/useSlices";
 
 export const Cost = () => {

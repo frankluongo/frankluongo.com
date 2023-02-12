@@ -1,5 +1,5 @@
 import React from "react";
-import { useLikesList } from "../lib/useLikesList";
+import { useLikesList } from "#lib/useLikesList";
 
 export const Likes = () => {
   const { dislikes, likes } = useLikesList();

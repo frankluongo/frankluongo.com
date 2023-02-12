@@ -2,7 +2,7 @@ import React from "react";
 
 import { classes } from "#helpers/classes";
 
-import { useSettings, toggleDarkMode } from "../context/settings";
+import { useSettings, toggleDarkMode } from "#context/settings";
 
 import * as css from "#styles/components/ThemeToggle.module.css";
 

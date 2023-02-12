@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as css from "#styles/components/Tile.module.css";
-import { classes } from "../helpers/classes";
+import { classes } from "../../helpers/classes";
 
 export const Tile = ({ children, extraClasses, styleOverrides }) => {
   return (

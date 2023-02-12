@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-import { useSettings, toggleSounds } from "../context/settings";
+import { useSettings, toggleSounds } from "#context/settings";
 
-import { Button } from "./Button";
+import { Button } from "#common/Button";
 import { ThemeToggle } from "./ThemeToggle";
-import { useAudio } from "../hooks/useAudio";
-import { SOUNDS } from "../constants/sounds";
-import { useSound } from "../hooks/useSound";
+import { useAudio } from "#hooks/useAudio";
+import { SOUNDS } from "#constants/sounds";
+import { useSound } from "#hooks/useSound";
 
 import * as css from "#styles/components/SettingsComponent.module.css";
 

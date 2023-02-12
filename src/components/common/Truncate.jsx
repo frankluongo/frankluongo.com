@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Button } from "#components/Button";
+import { Button } from "#common/Button";
 
 export const Truncate = ({ children, rest }) => {
   const [visible, setIsVisible] = useState(false);

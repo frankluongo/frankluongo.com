@@ -2,7 +2,7 @@ import React from "react";
 
 import { useProjects } from "#lib/useProjects";
 
-import { Card } from "#components/Card";
+import { Card } from "#common/Card";
 
 import * as css from "#styles/components/ProjectsPreview.module.css";
 

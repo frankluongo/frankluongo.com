@@ -5,9 +5,9 @@ import { Link } from "gatsby";
 
 import { useNav } from "#lib/useNav";
 
-import { useSettings } from "../context/settings";
-import { useSound } from "../hooks/useSound";
-import { SOUNDS } from "../constants/sounds";
+import { useSettings } from "#context/settings";
+import { useSound } from "#hooks/useSound";
+import { SOUNDS } from "#constants/sounds";
 
 import * as css from "#styles/components/DesktopMenu.module.css";
 

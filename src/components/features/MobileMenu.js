@@ -1,13 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMobileCtx } from "../context/mobileNav";
+import { useMobileCtx } from "#context/mobileNav";
 
 import { useNav } from "#lib/useNav";
 
 import { Link } from "gatsby";
 import { Socials } from "./Socials";
-import { useSound } from "../hooks/useSound";
-import { SOUNDS } from "../constants/sounds";
+import { useSound } from "#hooks/useSound";
+import { SOUNDS } from "#constants/sounds";
 
 import * as css from "#styles/components/MobileMenu.module.css";
 

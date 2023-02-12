@@ -4,11 +4,11 @@ import { graphql } from "gatsby";
 import { useMeta } from "#lib/useMeta";
 import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
-import { Availability } from "../components/Availability";
-import { Button } from "../components/Button";
-import { Hero } from "../components/Hero";
-import { ProjectsPreview } from "../components/ProjectsPreview";
-import { Seo } from "../components/Seo";
+import { Availability } from "#features/Availability";
+import { Button } from "#common/Button";
+import { Hero } from "#common/Hero";
+import { ProjectsPreview } from "#features/ProjectsPreview";
+import { Seo } from "#common/Seo";
 
 import { mdToHTML } from "../helpers/mdToHTML";
 
@@ -22,7 +22,6 @@ const ProjectsPage = (props) => {
 
   return (
     <>
-      <h1 data-a11y-hidden>{TITLE}</h1>
       <Hero
         path={data.heroImage.properties.imagePath.value}
         alt="Projects"

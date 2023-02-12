@@ -4,9 +4,9 @@ import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 import { useMeta } from "#lib/useMeta";
 
-import { Button } from "../components/Button";
-import { Hero } from "../components/Hero";
-import { Seo } from "../components/Seo";
+import { Button } from "#common/Button";
+import { Hero } from "#common/Hero";
+import { Seo } from "#common/Seo";
 
 import { Process } from "../slices/Process";
 import { WhyHire } from "../slices/WhyHire";

@@ -5,11 +5,11 @@ import { useMeta } from "#lib/useMeta";
 
 import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
-import { Availability } from "../components/Availability";
-import { Button } from "../components/Button";
-import { Hero } from "../components/Hero";
-import { PostsPreview } from "../components/PostsPreview";
-import { Seo } from "../components/Seo";
+import { Availability } from "#features/Availability";
+import { Button } from "#common/Button";
+import { Hero } from "#common/Hero";
+import { PostsPreview } from "#features/PostsPreview";
+import { Seo } from "#common/Seo";
 
 const TITLE = "Blog";
 

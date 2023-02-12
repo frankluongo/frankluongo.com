@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
 import { SettingsComponent } from "./SettingsComponent";
-import { useSound } from "../hooks/useSound";
-import { SOUNDS } from "../constants/sounds";
+import { useSound } from "#hooks/useSound";
+import { SOUNDS } from "#constants/sounds";
 
 import * as css from "#styles/components/Settings.module.css";
 

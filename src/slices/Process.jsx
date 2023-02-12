@@ -1,9 +1,12 @@
 import React from "react";
 
-import { classes } from "../helpers/classes";
-import * as css from "#styles/slices/Process.module.css";
-import { EmailMe } from "../components/EmailMe";
 import { useSlices } from "../lib/useSlices";
+
+import { classes } from "../helpers/classes";
+
+import { EmailMe } from "#features/EmailMe";
+
+import * as css from "#styles/slices/Process.module.css";
 
 export const Process = () => {
   const process = useSlices("process");

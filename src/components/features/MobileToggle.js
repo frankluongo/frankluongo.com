@@ -1,9 +1,9 @@
 import React from "react";
-import { useMobileCtx } from "../context/mobileNav";
+import { useMobileCtx } from "#context/mobileNav";
 import { MobileMenu } from "./MobileMenu";
 
-import { useSound } from "../hooks/useSound";
-import { SOUNDS } from "../constants/sounds";
+import { useSound } from "#hooks/useSound";
+import { SOUNDS } from "#constants/sounds";
 
 import * as css from "#styles/components/MobileToggle.module.css";
 

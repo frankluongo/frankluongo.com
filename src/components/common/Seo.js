@@ -1,5 +1,5 @@
 import React from "react";
-import { useMeta } from "../lib/useMeta";
+import { useMeta } from "../../lib/useMeta";
 
 export const Seo = ({ title, description, pathname, children }) => {
   const meta = useMeta();

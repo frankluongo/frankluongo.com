@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { Tile } from "../components/Tile";
-import { Tiles } from "../components/Tiles";
-import { Truncate } from "../components/Truncate";
+import { Tile } from "#common/Tile";
+import { Tiles } from "#common/Tiles";
+import { Truncate } from "#common/Truncate";
 
-import { Button } from "../components/Button";
+import { Button } from "#common/Button";
+
+import { useSlices } from "../lib/useSlices";
 
 import * as css from "#styles/slices/Projects.module.css";
-import { useSlices } from "../lib/useSlices";
 
 export const Projects = () => {
   const projects = useSlices("projects");

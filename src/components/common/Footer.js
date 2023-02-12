@@ -5,10 +5,10 @@ import { Link } from "gatsby";
 import { useMeta } from "#lib/useMeta";
 import { useNav } from "#lib/useNav";
 
-import { Availability } from "#components/Availability";
+import { Availability } from "#features/Availability";
 
 import * as css from "#styles/components/Footer.module.css";
-import { EmailMe } from "./EmailMe";
+import { EmailMe } from "#features/EmailMe";
 
 export const Footer = () => {
   const meta = useMeta();

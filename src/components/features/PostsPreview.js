@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import { usePosts } from "#lib/usePosts";
-import { Image } from "./Image";
-import { classes } from "../helpers/classes";
+import { Image } from "#common/Image";
+import { classes } from "#helpers/classes";
 import * as css from "#styles/components/PostsPreview.module.css";
 
 export const PostsPreview = () => {

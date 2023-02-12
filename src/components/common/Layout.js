@@ -1,7 +1,7 @@
 import React from "react";
-import { MobileCtxProvider } from "../context/mobileNav";
-import { SettingsProvider } from "../context/settings";
-import { App } from "./App";
+import { MobileCtxProvider } from "#context/mobileNav";
+import { SettingsProvider } from "#context/settings";
+import { App } from "../App";
 
 import "@frankluongo/css-starter";
 

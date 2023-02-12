@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 
 import { useImages } from "#lib/useImages";
 
-import { BlogPost } from "../components/BlogPost";
-import { Hero } from "../components/Hero";
-import { Seo } from "../components/Seo";
+import { BlogPost } from "#features/BlogPost";
+import { Hero } from "#common/Hero";
+import { Seo } from "#common/Seo";
 import { sanitizeHTML } from "../helpers/sanitizeHTML";
 
 const Project = ({ data }) => {

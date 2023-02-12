@@ -1,8 +1,8 @@
 import React from "react";
-import { EmailMe } from "../components/EmailMe";
-import { Tile } from "../components/Tile";
-import { useMeta } from "../lib/useMeta";
-import { useSlices } from "../lib/useSlices";
+import { EmailMe } from "#features/EmailMe";
+import { Tile } from "#common/Tile";
+import { useMeta } from "#lib/useMeta";
+import { useSlices } from "#lib/useSlices";
 
 export const Services = () => {
   const emailAddress = useMeta().businessEmail?.title;

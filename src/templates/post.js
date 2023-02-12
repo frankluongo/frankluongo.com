@@ -6,8 +6,8 @@ import css from "highlight.js/lib/languages/css";
 import html from "highlight.js/lib/languages/xml";
 import javascript from "highlight.js/lib/languages/javascript";
 
-import { BlogPost } from "../components/BlogPost";
-import { Seo } from "../components/Seo";
+import { BlogPost } from "#features/BlogPost";
+import { Seo } from "#common/Seo";
 
 import "highlight.js/styles/github.css";
 import "#styles/hljs.css";

@@ -6,13 +6,13 @@ import { useMeta } from "#lib/useMeta";
 import { mdToHTML } from "../helpers/mdToHTML";
 import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
-import { Availability } from "../components/Availability";
-import { Button } from "../components/Button";
-import { Hero } from "../components/Hero";
-import { Markup } from "../components/Markup";
-import { Likes } from "../components/Likes";
-import { Socials } from "../components/Socials";
-import { Seo } from "../components/Seo";
+import { Availability } from "#features/Availability";
+import { Button } from "#common/Button";
+import { Hero } from "#common/Hero";
+import { Markup } from "#common/Markup";
+import { Likes } from "#features/Likes";
+import { Socials } from "#features/Socials";
+import { Seo } from "#common/Seo";
 
 const TITLE = "Contact Me";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Tile } from "../components/Tile";
+import { Tile } from "#common/Tile";
 
 import { classes } from "../helpers/classes";
 import { useSlices } from "../lib/useSlices";
