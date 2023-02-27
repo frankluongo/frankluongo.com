@@ -4,15 +4,15 @@ import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
 import { useMeta } from "#lib/useMeta";
 
-import { Button } from "#common/Button";
-import { Hero } from "#common/Hero";
-import { Seo } from "#common/Seo";
+import { Button } from "#base/Button/Button";
+import { Hero } from "#base/Hero/Hero";
+import { Seo } from "#base/Seo";
 
-import { Process } from "../slices/Process";
-import { WhyHire } from "../slices/WhyHire";
-import { Services } from "../slices/Services";
-import { Projects } from "../slices/Projects";
-import { Cost } from "../slices/Cost";
+import { SliceProcess } from "#features/SliceProcess/SliceProcess";
+import { SliceHire } from "#features/SliceHire/SliceHire";
+import { SliceServices } from "#features/SliceServices/SliceServices";
+import { SliceProjects } from "#features/SliceProjects/SliceProjects";
+import { SliceCost } from "#features/SliceCost/SliceCost";
 
 const TITLE = "Home";
 
@@ -41,12 +41,12 @@ const IndexPage = (props) => {
           </div>
         </div>
       </Hero>
-      <Projects />
+      <SliceProjects />
       <div className="margin-block:section" />
-      <WhyHire />
-      <Process />
-      <Services />
-      <Cost />
+      <SliceHire />
+      <SliceProcess />
+      <SliceServices />
+      <SliceCost />
     </>
   );
 };

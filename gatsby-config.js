@@ -65,7 +65,7 @@ module.exports = {
       options: {
         root: "./src",
         aliases: {
-          "#common": "./components/common",
+          "#base": "./components/base",
           "#constants": "./constants",
           "#context": "./context",
           "#features": "./components/features",

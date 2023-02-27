@@ -1,8 +1,0 @@
-.Previews {
-  --card-width: 14rem;
-
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, var(--card-width));
-  justify-content: center;
-}

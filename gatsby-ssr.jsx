@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "./src/components/common/Layout";
+import { Layout } from "./src/components/base/Layout";
 
 import "./src/styles/app.css";
 

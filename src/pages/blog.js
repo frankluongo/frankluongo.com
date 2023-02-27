@@ -3,15 +3,16 @@ import { graphql } from "gatsby";
 
 import { useMeta } from "#lib/useMeta";
 
-import { objectifyNotionData } from "../helpers/objectifyNotionData";
+import { objectifyNotionData } from "#helpers/objectifyNotionData";
+import { stripMarkdown } from "#helpers/stripMarkdown";
 
-import { Availability } from "#features/Availability";
-import { Button } from "#common/Button";
-import { Hero } from "#common/Hero";
-import { PostsPreview } from "#features/PostsPreview";
-import { Seo } from "#common/Seo";
+import { Button } from "#base/Button/Button";
+import { Hero } from "#base/Hero/Hero";
+import { SectionHeader } from "#base/SectionHeader/SectionHeader";
+import { Seo } from "#base/Seo";
 
-const TITLE = "Blog";
+import { Availability } from "#features/Availability/Availability";
+import { PostsPreview } from "#features/PostsPreview/PostsPreview";
 
 const BlogPage = (props) => {
   const data = objectifyNotionData(props.data.allNotion.nodes);
@@ -19,7 +20,6 @@ const BlogPage = (props) => {
 
   return (
     <>
-      <h1 data-a11y-hidden>{TITLE}</h1>
       <Hero
         path={data.heroImage.properties.imagePath.value}
         alt="Blog Page"
@@ -40,10 +40,8 @@ const BlogPage = (props) => {
           </div>
         </div>
       </Hero>
+      <SectionHeader headerStyle="blue">Articles &amp; Whatnot</SectionHeader>
       <section className="container page-body flex col gap:2">
-        <header>
-          <h3>Articles &amp; Whatnot</h3>
-        </header>
         <PostsPreview />
       </section>
     </>
@@ -83,5 +81,13 @@ export default BlogPage;
 
 export const Head = ({ data }) => {
   const page = objectifyNotionData(data.allNotion.nodes);
-  return <Seo title={TITLE} description={page?.metaDescription} />;
+  const dynamicTitle = stripMarkdown(
+    page?.heroHeadline?.properties?.content?.value
+  );
+  return (
+    <Seo
+      title={dynamicTitle || "My blog"}
+      description={page?.metaDescription}
+    />
+  );
 };

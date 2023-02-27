@@ -3,18 +3,19 @@ import { graphql } from "gatsby";
 
 import { useMeta } from "#lib/useMeta";
 
-import { mdToHTML } from "../helpers/mdToHTML";
-import { objectifyNotionData } from "../helpers/objectifyNotionData";
+import { mdToHTML } from "#helpers/mdToHTML";
+import { objectifyNotionData } from "#helpers/objectifyNotionData";
+import { stripMarkdown } from "#helpers/stripMarkdown";
 
-import { Availability } from "#features/Availability";
-import { Button } from "#common/Button";
-import { Hero } from "#common/Hero";
-import { Markup } from "#common/Markup";
-import { Likes } from "#features/Likes";
-import { Socials } from "#features/Socials";
-import { Seo } from "#common/Seo";
+import { Button } from "#base/Button/Button";
+import { Hero } from "#base/Hero/Hero";
+import { Markup } from "#base/Markup/Markup";
+import { SectionHeader } from "#base/SectionHeader/SectionHeader";
+import { Seo } from "#base/Seo";
 
-const TITLE = "Contact Me";
+import { Availability } from "#features/Availability/Availability";
+import { Likes } from "#features/Likes/Likes";
+import { Socials } from "#features/Socials/Socials";
 
 const ContactPage = (props) => {
   const data = objectifyNotionData(props.data.allNotion.nodes);
@@ -24,7 +25,6 @@ const ContactPage = (props) => {
 
   return (
     <>
-      <h1 data-a11y-hidden>{TITLE}</h1>
       <Hero
         path={data.heroImage.properties.imagePath.value}
         alt="Contact Page"
@@ -45,9 +45,11 @@ const ContactPage = (props) => {
           </div>
         </div>
       </Hero>
+      <SectionHeader headerStyle="blue">
+        {data.aboutMeHeadline.properties.content.value}
+      </SectionHeader>
       <section className="container page-body grid gap:2 grid:cols-2">
         <div className="flex col gap:1">
-          <h3>{data.aboutMeHeadline.properties.content.value}</h3>
           <Markup
             Tag="article"
             content={data.aboutMeText.childMarkdownRemark.html}
@@ -100,5 +102,13 @@ export default ContactPage;
 
 export const Head = ({ data }) => {
   const page = objectifyNotionData(data.allNotion.nodes);
-  return <Seo title={TITLE} description={page?.metaDescription} />;
+  const dynamicTitle = stripMarkdown(
+    page?.heroHeadline?.properties?.content?.value
+  );
+  return (
+    <Seo
+      title={dynamicTitle || "Contact me"}
+      description={page?.metaDescription}
+    />
+  );
 };

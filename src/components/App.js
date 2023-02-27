@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { userInteracted, useSettings } from "../context/settings";
 
-import { Footer } from "./common/Footer";
-import { Header } from "./common/Header";
-import { SettingsToggle } from "./features/SettingsToggle";
-import { SkipLink } from "./common/SkipLink";
+import { Footer } from "#features/Footer/Footer";
+import { Header } from "#base/Header/Header";
+import { SettingsToggle } from "#features/SettingsToggle/SettingsToggle";
+import { SkipLink } from "#base/SkipLink/SkipLink";
 
 const modes = { true: "is-dark", false: "is-light" };
 const themeClasses = Object.values(modes);

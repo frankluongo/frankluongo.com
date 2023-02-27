@@ -1,5 +1,5 @@
 export function mdToHTML(md) {
-  if (!md) return "";
+  if (typeof md !== "string") return "";
   if (!md.includes("**")) return md;
   const mdArr = md?.split("**");
   const length = mdArr?.length;

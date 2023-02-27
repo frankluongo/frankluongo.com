@@ -2,17 +2,18 @@ import * as React from "react";
 import { graphql } from "gatsby";
 
 import { useMeta } from "#lib/useMeta";
-import { objectifyNotionData } from "../helpers/objectifyNotionData";
 
-import { Availability } from "#features/Availability";
-import { Button } from "#common/Button";
-import { Hero } from "#common/Hero";
-import { ProjectsPreview } from "#features/ProjectsPreview";
-import { Seo } from "#common/Seo";
+import { Button } from "#base/Button/Button";
+import { Hero } from "#base/Hero/Hero";
+import { SectionHeader } from "#base/SectionHeader/SectionHeader";
+import { Seo } from "#base/Seo";
+
+import { Availability } from "#features/Availability/Availability";
+import { ProjectsPreview } from "#features/ProjectsPreview/ProjectsPreview";
 
 import { mdToHTML } from "../helpers/mdToHTML";
-
-const TITLE = "Projects";
+import { objectifyNotionData } from "../helpers/objectifyNotionData";
+import { stripMarkdown } from "../helpers/stripMarkdown";
 
 const ProjectsPage = (props) => {
   const data = objectifyNotionData(props.data.allNotion.nodes);
@@ -42,6 +43,7 @@ const ProjectsPage = (props) => {
           </div>
         </div>
       </Hero>
+      <SectionHeader headerStyle="blue">My Projects</SectionHeader>
       <div className="container page-body flex col gap:3">
         <ProjectsPreview />
       </div>
@@ -82,5 +84,13 @@ export default ProjectsPage;
 
 export const Head = ({ data }) => {
   const page = objectifyNotionData(data.allNotion.nodes);
-  return <Seo title={TITLE} description={page?.metaDescription} />;
+  const dynamicTitle = stripMarkdown(
+    page?.heroHeadline?.properties?.content?.value
+  );
+  return (
+    <Seo
+      title={dynamicTitle || "Projects"}
+      description={page?.metaDescription}
+    />
+  );
 };

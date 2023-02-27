@@ -1,0 +1,10 @@
+.Card {
+  align-items: center;
+  display: flex;
+  height: 100%;
+
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #cbc9c8;
+  box-shadow: 0px 0px 6px rgba(22, 118, 155, 0.1);
+}

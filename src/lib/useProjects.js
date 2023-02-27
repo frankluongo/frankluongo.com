@@ -13,6 +13,9 @@ export function useProjects() {
         }
       ) {
         nodes {
+          childMarkdownRemark {
+            html
+          }
           id
           properties {
             slug {
@@ -27,6 +30,11 @@ export function useProjects() {
             previewImage {
               value
             }
+            projectTags {
+              value {
+                name
+              }
+            }
           }
           title
         }
@@ -34,11 +42,13 @@ export function useProjects() {
     }
   `);
   return parseNotionData(data.allNotion.nodes, [
+    "childMarkdownRemark",
     "id",
     "title",
     "content",
     "slug",
     "thumbnailImage",
     "previewImage",
+    "projectTags",
   ]);
 }

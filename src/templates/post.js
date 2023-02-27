@@ -6,13 +6,13 @@ import css from "highlight.js/lib/languages/css";
 import html from "highlight.js/lib/languages/xml";
 import javascript from "highlight.js/lib/languages/javascript";
 
-import { BlogPost } from "#features/BlogPost";
-import { Seo } from "#common/Seo";
+import { BlogPost } from "#base/BlogPost/BlogPost";
+import { Seo } from "#base/Seo";
 
 import "highlight.js/styles/github.css";
 import "#styles/hljs.css";
 
-const Post = ({ data }) => {
+const PostTemplate = ({ data }) => {
   const __html = data.notion.childMarkdownRemark.html;
   const langs = useMemo(() => ({ css, html, javascript }), []);
 
@@ -52,7 +52,7 @@ export const query = graphql`
   }
 `;
 
-export default Post;
+export default PostTemplate;
 
 export const Head = ({ pageContext }) => (
   <Seo title={pageContext.title.replaceAll("**", "")} />

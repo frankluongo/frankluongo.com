@@ -1,0 +1,77 @@
+.Aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Content {
+  --columns: 1fr;
+  --gap: 1rem;
+
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--columns);
+  padding: var(--gap);
+}
+
+.Description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Description h3 {
+  font: var(--font-h4);
+}
+
+.Description h4 {
+  font: var(--font-h5);
+}
+
+.Description img {
+  max-width: 100%;
+}
+
+.ProjectCard {
+  display: flex;
+  align-content: center;
+}
+
+.ProjectColumn {
+  cursor: pointer;
+}
+
+.Text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Thumbnail {
+  --size: 2rem;
+
+  height: var(--size);
+  width: var(--size);
+
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 1000px) {
+  .Content {
+    --gap: 2rem;
+  }
+
+  .ProjectColumn[aria-current="true"] {
+    order: -1;
+    grid-row: span 4;
+  }
+
+  .ProjectColumn[aria-current="true"] .Content {
+    --columns: 1fr 2fr;
+  }
+
+  .ProjectColumn[aria-current="true"] .ProjectCard {
+    align-items: flex-start;
+  }
+}
