@@ -1,11 +1,12 @@
 {
-  "name": "frankluongo.com-v5",
+  "name": "frankluongo.com",
   "version": "1.0.0",
   "private": true,
-  "description": "frankluongo.com-v5",
+  "description": "I'm Frank Luongo. A web developer and designer with over 10 years of experience building websites and web applications. I'm currently working as a Senior Frontend Engineer at O'Reilly Media.",
   "author": "Frank Luongo",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "freelancer"
   ],
   "scripts": {
     "develop": "gatsby develop",
