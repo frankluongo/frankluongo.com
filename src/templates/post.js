@@ -6,6 +6,7 @@ import css from "highlight.js/lib/languages/css";
 import html from "highlight.js/lib/languages/xml";
 import javascript from "highlight.js/lib/languages/javascript";
 
+import * as Styled from "./post.styled";
 import { BlogPost } from "#base/BlogPost/BlogPost";
 import { Seo } from "#base/Seo";
 
@@ -28,15 +29,12 @@ const PostTemplate = ({ data }) => {
   }, [langs]);
 
   return (
-    <div
-      className="container container--blog page-body flex col gap:2"
-      data-blog-page
-    >
+    <Styled.Container $variant="blog">
       <header>
         <h1>{rawTitle}</h1>
       </header>
       <BlogPost dangerouslySetInnerHTML={{ __html }} />
-    </div>
+    </Styled.Container>
   );
 };
 

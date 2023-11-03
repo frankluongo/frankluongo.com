@@ -7,10 +7,35 @@ require("dotenv").config({
  */
 module.exports = {
   siteMetadata: {
+    links: [
+      { name: "Home", url: "/" },
+      { name: "Projects", url: "/projects" },
+      { name: "Contact", url: "/contact" },
+      { name: "Blog", url: "/blog" },
+    ],
     title: `frankluongo.com`,
     siteUrl: `https://frankluongo.com`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+    // Filesystem Access (Videos)
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "photos",
+        path: "./src/assets/images",
+      },
+      __key: "photos",
+    },
+    // Filesystem Access (Videos)
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "videos",
+        path: "./src/assets/videos",
+      },
+      __key: "videos",
+    },
     // Filesystem Access (Images)
     {
       resolve: "gatsby-source-filesystem",
@@ -65,6 +90,7 @@ module.exports = {
       options: {
         root: "./src",
         aliases: {
+          "#assets": "./assets",
           "#base": "./components/base",
           "#constants": "./constants",
           "#context": "./context",
@@ -74,6 +100,7 @@ module.exports = {
           "#lib": "./lib",
           "#presentation": "./presentation",
           "#styles": "./styles",
+          "#v6": "./v6",
           static: {
             root: "./public", // <- will used as this alias' root dir
             alias: "./static", // <- will become ./public/static

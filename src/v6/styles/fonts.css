@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Silka Web";
+  src: url("/fonts/silka-regular-webfont.woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silka Web";
+  src: url("/fonts/silka-regularitalic-webfont.woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silka Web";
+  src: url("/fonts/silka-bold-webfont.woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silka Web";
+  src: url("/fonts/silka-bolditalic-webfont.woff2");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silka Web";
+  src: url("/fonts/silka-black-webfont.woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silka Web";
+  src: url("/fonts/silka-blackitalic-webfont.woff2");
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+}
+
+*,
+body,
+html,
+input,
+*::before,
+*::after {
+  font-family: "Silka Web", sans-serif;
+}

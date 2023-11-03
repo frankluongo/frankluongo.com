@@ -1,0 +1,62 @@
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:is(:hover, :focus) {
+  text-decoration: underline;
+}
+
+a.alt {
+  color: var(--color-primary-alt);
+}
+
+blockquote {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+cite {
+  color: var(--color-text-lighter);
+  font-style: italic;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 10vw, 4.5rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+label {
+  font-size: clamp(0.75rem, 4vw, 0.875rem);
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: 900;
+}
