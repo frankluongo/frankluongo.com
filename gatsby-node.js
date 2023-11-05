@@ -4,7 +4,7 @@ const POSTS = "posts";
 
 const postsObj = {
   [POSTS]: {
-    component: path.resolve("src/templates/post.js"),
+    component: path.resolve("src/templates/Post/Post.jsx"),
     dir: "/blog/",
   },
 };

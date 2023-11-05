@@ -18,7 +18,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
-    // Filesystem Access (Videos)
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -27,7 +26,6 @@ module.exports = {
       },
       __key: "photos",
     },
-    // Filesystem Access (Videos)
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -35,15 +33,6 @@ module.exports = {
         path: "./src/assets/videos",
       },
       __key: "videos",
-    },
-    // Filesystem Access (Images)
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
     },
     // Filesystem Access (Pages)
     {
@@ -67,7 +56,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/assets/images/icon.png",
       },
     },
     // Markdown Remark
@@ -92,15 +81,11 @@ module.exports = {
         aliases: {
           "#assets": "./assets",
           "#base": "./components/base",
-          "#constants": "./constants",
-          "#context": "./context",
           "#features": "./components/features",
-          "#helpers": "./helpers",
-          "#hooks": "./hooks",
           "#lib": "./lib",
-          "#presentation": "./presentation",
+          "#routes": "./routes",
           "#styles": "./styles",
-          "#v6": "./v6",
+          "#utils": "./utils",
           static: {
             root: "./public", // <- will used as this alias' root dir
             alias: "./static", // <- will become ./public/static

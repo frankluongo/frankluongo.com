@@ -1,9 +1,0 @@
-.padding\:1 {
-  padding: 1rem;
-}
-
-@media (min-width: 1000px) {
-  .md\:padding\:2 {
-    padding: 2rem;
-  }
-}

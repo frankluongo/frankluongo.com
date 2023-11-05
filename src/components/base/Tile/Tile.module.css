@@ -1,7 +1,0 @@
-.Tile {
-  background: var(--theme-color-background-default);
-  border: 2px solid var(--theme-color-border-default);
-  box-shadow: 0px 0px 6px rgba(22, 118, 155, 0.1);
-  border-radius: 0.5rem;
-  overflow: hidden;
-}

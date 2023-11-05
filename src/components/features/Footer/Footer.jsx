@@ -1,95 +1,120 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faSquareCheck } from "@fortawesome/free-regular-svg-icons";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-import { Link } from "gatsby";
+import * as Styled from "./Footer.styled";
+import LargeText from "#base/LargeText.styled";
 
-import { useMeta } from "#lib/useMeta";
-import { useNav } from "#lib/useNav";
-
-import { Availability } from "#features/Availability/Availability";
-import { EmailMe } from "#features/EmailMe/EmailMe";
-
-import * as css from "./Footer.module.css";
-
-export const Footer = () => {
-  const meta = useMeta();
-  const links = useNav();
-
-  const year = new Date().getFullYear();
-
+export default function Footer() {
   return (
     <>
-      <footer className={`${css.Footer} padding-block:section`}>
-        <div className="container gap grid grid:12">
-          <header className="col:12 md:col:6 flex col gap:tight">
-            <h2 className="h3">Frank Luongo Design Co.</h2>
-            <p className="color:gray-2">
-              Freelance Website developer based in Clarks Summit, PA and
-              servicing the surrounding areas, as well as the entire United
-              States.
+      <Styled.Footer>
+        <Styled.Container>
+          <Styled.Blurb>
+            <h2>
+              <strong>Frank Luongo</strong>{" "}
+              <Styled.SkinnyText>Design Co.</Styled.SkinnyText>
+            </h2>
+            <LargeText $color="--color-text-alt">
+              <strong>I&apos;m Frank Luongo</strong>, an experienced Software
+              Developer and Graphic Designer with a comprehensive skill set
+              encompassing cutting-edge software development and visually
+              compelling graphic design to create transformative digital
+              projects.
+            </LargeText>
+            <p>
+              This website is built using{" "}
+              <a
+                className="alt"
+                href="//www.gatsbyjs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Gatsby Js
+              </a>
+              , hosted on{" "}
+              <a
+                className="alt"
+                href="//www.netlify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Netlify
+              </a>{" "}
+              and typeset in{" "}
+              <a
+                className="alt"
+                href="//www.atipofoundry.com/fonts/silka"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Silka
+              </a>{" "}
+              by{" "}
+              <a
+                className="alt"
+                href="//www.atipofoundry.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Atipo Foundry
+              </a>
             </p>
-          </header>
-          <section className="col:12 md:col:6 flex col gap:tight">
-            <h2 className="h3">Get in touch</h2>
-            <EmailMe className="color:gray-3 link" Tag="a">
-              {meta.businessEmail.title}
-            </EmailMe>
-            <a
-              href={`tel:+1${meta.businessPhone.title}`}
-              className="color:gray-3 link"
-            >
-              {meta.businessPhone.title}
-            </a>
-            <div className="flex gap:tight">
-              <EmailMe
-                className="color:gray-3 link"
-                title="Send me an email!"
-                Tag="a"
+          </Styled.Blurb>
+          <Styled.Socials>
+            <li>
+              <Styled.Social
+                href="//www.instagram.com/frankluongodesignco/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                ✉️ Email
-              </EmailMe>
-              <span>/</span>
-              <a
-                href="https://github.com/frankluongo"
-                className="color:gray-3 link"
-                title="Check out my GitHub"
+                <FontAwesomeIcon icon={faInstagram} />
+                frankluongodesignco
+              </Styled.Social>
+            </li>
+            <li>
+              <Styled.Social
+                href="mailto:frank@frankluongo.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                🐙 GitHub
-              </a>
-              <span>/</span>
-              <a
-                href="https://www.instagram.com/_frankluongo/"
-                className="color:gray-3 link"
-                title="Check out my Instagram"
+                <FontAwesomeIcon icon={faEnvelope} />
+                frank@frankluongo.com
+              </Styled.Social>
+            </li>
+            <li>
+              <Styled.Social
+                href="//github.com/frankluongo/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                📷 Instagram
-              </a>
-            </div>
-            <Availability extraClasses="" />
-          </section>
-          <section className="col:12 md:col:6 flex col gap:tight">
-            <header>
-              <h2 className="h3">Sitemap</h2>
-            </header>
-            <ul className="flex align-items:center gap:1">
-              {links.map((link) => (
-                <li key={`${link.id}-footer`}>
-                  <Link className="smaller" to={link.slug}>
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-      </footer>
-      <section className={css.Copyright}>
-        <div
-          className="flex justify-content:center align-items:center"
-          data-container
-        >
-          <small>&copy; {year} Frank Luongo Design Co., LLC</small>
-        </div>
-      </section>
+                <FontAwesomeIcon icon={faGithub} />
+                frankluongo
+              </Styled.Social>
+            </li>
+            <li>
+              <Styled.Social
+                href="mailto:frank@frankluongo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faSquareCheck} />
+                Available for freelance
+              </Styled.Social>
+            </li>
+          </Styled.Socials>
+        </Styled.Container>
+      </Styled.Footer>
+      <Styled.Copyright>
+        <Styled.Container>
+          <small>
+            <strong>
+              &copy; {new Date().getFullYear()} Frank Luongo Design Co. LLC
+            </strong>
+          </small>
+        </Styled.Container>
+      </Styled.Copyright>
     </>
   );
-};
+}

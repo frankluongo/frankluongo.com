@@ -1,7 +1,10 @@
 import * as React from "react";
-import { Seo } from "#base/Seo";
-import ContactSlice from "#v6/components/slices/ContactSlice/ContactSlice";
-const ContactPage = () => <ContactSlice />;
+import Seo from "#lib/Seo/Seo";
+
+import ContactRoute from "#routes/ContactRoute/ContactRoute";
+
+const ContactPage = () => <ContactRoute />;
+
 export const Head = () => {
   return (
     <Seo

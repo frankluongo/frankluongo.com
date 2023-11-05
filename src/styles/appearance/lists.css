@@ -1,9 +1,0 @@
-.list {
-  padding-inline-start: 1.5rem;
-
-  list-style: disc;
-}
-
-.list li + li {
-  margin-top: 0.5rem;
-}
