@@ -20,16 +20,7 @@ export function usePosts() {
               slug {
                 value
               }
-              previewImage {
-                value
-              }
-              imagePath {
-                value
-              }
-              thumbnailImage {
-                value
-              }
-              content {
+              excerpt {
                 value
               }
               tags {
@@ -44,13 +35,10 @@ export function usePosts() {
     `
   );
   return parseNotionData(data.allNotion.nodes, [
+    "excerpt",
     "id",
     "slug",
-    "title",
-    "previewImage",
-    "imagePath",
-    "thumbnailImage",
-    "content",
     "tags",
+    "title",
   ]);
 }

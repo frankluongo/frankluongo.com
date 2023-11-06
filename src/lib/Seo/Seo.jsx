@@ -3,17 +3,18 @@ import useSeo from "./useSeo";
 
 export default function Seo({ title, description, pathname, children }) {
   const meta = useSeo();
-  const defaultTitle = meta.defaultMetaTitle.properties.content.value;
+  console.log(meta);
+  const defaultTitle = meta.defaultMetaTitle.properties.excerpt.value;
   const defaultDescription =
-    meta.defaultMetaDescription.properties.content.value;
-  const metaImage = meta.metaImage.properties.content.value;
-  const siteUrl = meta.siteUrl.properties.content.value;
-  const twitterUsername = meta.twitterUsername.properties.content.value;
+    meta.defaultMetaDescription.properties.excerpt.value;
+  const metaImage = meta.metaImage.properties.excerpt.value;
+  const siteUrl = meta.siteUrl.properties.excerpt.value;
+  const twitterUsername = meta.twitterUsername.properties.excerpt.value;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${metaImage}`,
+    image: metaImage,
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
   };

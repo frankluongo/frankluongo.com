@@ -3,21 +3,16 @@ import { objectifyNotionData } from "#utils/notion";
 
 export default function useSeo() {
   const data = useStaticQuery(graphql`
-    query MetaDataQuery {
+    query {
       allNotion(
-        filter: {
-          properties: {
-            space: { value: { name: { eq: "meta" } } }
-            published: { value: { eq: true } }
-          }
-        }
+        filter: { properties: { type: { value: { name: { eq: "meta" } } } } }
       ) {
         nodes {
           properties {
             slug {
               value
             }
-            content {
+            excerpt {
               value
             }
           }
@@ -26,5 +21,6 @@ export default function useSeo() {
       }
     }
   `);
+  console.log(data);
   return objectifyNotionData(data.allNotion.nodes);
 }
