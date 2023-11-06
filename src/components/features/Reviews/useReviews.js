@@ -54,8 +54,7 @@ export default function useReviews() {
     },
     {
       author: "Kira and Suzanna",
-      content: `Working with Frank was a game-changer for our business! Their keen eye for aesthetics and intuitive understanding of user experience resulted in a website that not only looks stunning but also functions seamlessly.
-      Thank you, Frank, for turning our vision into a visually captivating reality!`,
+      content: `Working with Frank has been a LIFE SAVOR!! Being a small business, it is crucial that our website is not only professional, but user friendly and reflects the personality of the business. We've gotten countless feedback from clients on how our website was what got them to pick us over others in the industry! Frank is not only great at what he does - he is a joy to work with and is ALWAYS on top of it! We know we can rely on Frank to show up and help us with our online presence. We can't recommend him enough!`,
       image: kiraandsuzanna,
       source: "Twin Waves Wellness Center",
       sourceUrl: "https://twinwaveswelnness.com",
