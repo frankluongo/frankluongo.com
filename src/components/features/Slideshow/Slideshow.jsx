@@ -5,8 +5,11 @@ import * as Styled from "./Slideshow.styled";
 import useSlideshow from "./useSlideshow";
 
 export default function Slideshow({ items }) {
-  const { index, selectItem } = useSlideshow();
+  const { clickCount, index, selectItem, updateClickCount } = useSlideshow();
   const currentItem = items[index] || items[0];
+
+  const hasImage = !!currentItem.image;
+
   return (
     <Styled.Container>
       <Styled.Controls>
@@ -20,12 +23,9 @@ export default function Slideshow({ items }) {
         ))}
       </Styled.Controls>
       <Styled.Content>
-        {currentItem.image && (
-          <Styled.ContentImageWrapper>
-            <GatsbyImage
-              image={getImage(currentItem.image)}
-              alt={currentItem.author}
-            />
+        {hasImage && (
+          <Styled.ContentImageWrapper onClick={updateClickCount}>
+            <GatsbyImage image={getImageSource()} alt={currentItem.author} />
           </Styled.ContentImageWrapper>
         )}
         <Styled.ContentText>
@@ -44,4 +44,11 @@ export default function Slideshow({ items }) {
       </Styled.Content>
     </Styled.Container>
   );
+
+  function getImageSource() {
+    if (clickCount >= 3 && currentItem.easterEgg) {
+      return getImage(currentItem.easterEgg);
+    }
+    return getImage(currentItem.image);
+  }
 }

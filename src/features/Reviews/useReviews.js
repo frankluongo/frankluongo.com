@@ -21,6 +21,15 @@ export default function useReviews() {
           }
         }
       }
+      jonEgg: file(relativePath: { eq: "jon-easter-egg.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+          original {
+            height
+            width
+          }
+        }
+      }
       kiraandsuzanna: file(relativePath: { eq: "kira-and-suzanna.jpg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: AUTO)
@@ -33,22 +42,21 @@ export default function useReviews() {
     }
   `);
 
-  const { alex, jon, kiraandsuzanna } = images;
+  const { alex, jon, jonEgg, kiraandsuzanna } = images;
 
   return [
     {
       author: "Alex Capozzolo",
-      content: `Working with Frank was a game-changer for our business! Their keen eye for aesthetics and intuitive understanding of user experience resulted in a website that not only looks stunning but also functions seamlessly.
-      Thank you, Frank, for turning our vision into a visually captivating reality!`,
+      content: `We've been working with Frank for over +3 years and it's been great! He's helped us build 2 real estate websites that now generate all of our online leads. The helps he gave us with branding our company, logo, and website were top notch. If you want to stand out from your competition and have a memorable/professional online presence, he's your guy. He's extremely responsive whenever we need help with something.`,
       image: alex,
       source: "SD House Guys",
       sourceUrl: "https://sdhouseguys.com",
     },
     {
       author: "Jon Sanborn",
-      content: `Working with Frank was a game-changer for our business! Their keen eye for aesthetics and intuitive understanding of user experience resulted in a website that not only looks stunning but also functions seamlessly.
-      Thank you, Frank, for turning our vision into a visually captivating reality!`,
+      content: `Easy to work with, always answers quickly, and solves issues on problems I don't even know exist.  We get countless praises on our website, branding, etc, all of which Frank played a huge role in. Highly recommend! `,
       image: jon,
+      easterEgg: jonEgg,
       source: "Brotherly Love Real Estate",
       sourceUrl: "https://brotherlyloveproperties.com",
     },

@@ -86,6 +86,7 @@ module.exports = {
           "#routes": "./routes",
           "#styles": "./styles",
           "#utils": "./utils",
+          "@features": "./features",
           static: {
             root: "./public", // <- will used as this alias' root dir
             alias: "./static", // <- will become ./public/static

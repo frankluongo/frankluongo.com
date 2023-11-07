@@ -3,7 +3,6 @@ import useSeo from "./useSeo";
 
 export default function Seo({ title, description, pathname, children }) {
   const meta = useSeo();
-  console.log(meta);
   const defaultTitle = meta.defaultMetaTitle.properties.excerpt.value;
   const defaultDescription =
     meta.defaultMetaDescription.properties.excerpt.value;

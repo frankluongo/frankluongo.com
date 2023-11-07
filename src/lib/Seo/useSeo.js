@@ -21,6 +21,5 @@ export default function useSeo() {
       }
     }
   `);
-  console.log(data);
   return objectifyNotionData(data.allNotion.nodes);
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Slideshow from "../Slideshow/Slideshow";
+import Slideshow from "#features/Slideshow/Slideshow";
 
 import useReviews from "./useReviews";
 import * as Styled from "./Reviews.styled";
