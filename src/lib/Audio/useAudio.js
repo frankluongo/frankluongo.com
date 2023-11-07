@@ -1,13 +1,28 @@
-import { useEffect, useState } from "react";
+import { useSettings } from "#lib/Settings";
 
-export function useAudio(path) {
-  const [audio, setAudio] = useState({ play: () => {} });
+import { SOUNDS } from "./sounds";
 
-  useEffect(() => {
-    const audioEl = new Audio(path);
-    audioEl.volume = 0.25;
-    setAudio(audioEl);
-  }, [path]);
+export function useAudio() {
+  const { state } = useSettings();
+  const canPlay = state.userInteracted && state.enableSounds;
 
-  return audio;
+  const playPause = () => playSound(SOUNDS.pause);
+  const playStageSelect = () => playSound(SOUNDS.stageSelect);
+  const playSwitch = () => playSound(SOUNDS.switch);
+  const playTransportIn = () => playSound(SOUNDS.transportIn);
+  const playTransportOut = () => playSound(SOUNDS.transportOut);
+
+  return {
+    playPause,
+    playStageSelect,
+    playSwitch,
+    playTransportIn,
+    playTransportOut,
+  };
+
+  function playSound(path) {
+    const sound = new Audio(path);
+    sound.volume = 0.05;
+    canPlay && sound.play();
+  }
 }

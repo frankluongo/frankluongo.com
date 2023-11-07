@@ -2,19 +2,16 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { SOUNDS, useSound } from "#lib/Audio";
-import { useSettings } from "#lib/Settings";
 
 import Button from "#base/Button.styled";
 
 import useHeader from "./useHeader";
 import * as Styled from "./Header.styled";
+import { useAudio } from "#lib/Audio";
 
 export default function Header() {
-  const { state } = useSettings();
-  const switchAudio = useSound(SOUNDS.switch);
-  const stageSelectAudio = useSound(SOUNDS.stageSelect);
   const links = useHeader();
+  const { playStageSelect, playSwitch } = useAudio();
 
   return (
     <Styled.Header>
@@ -25,9 +22,9 @@ export default function Header() {
               <li key={url}>
                 <Styled.NavLink
                   to={url}
-                  onClick={handleClick}
+                  onClick={playStageSelect}
                   onKeyUp={handleKeyup}
-                  onMouseEnter={handleMouseEnter}
+                  onMouseEnter={playSwitch}
                 >
                   {name}
                 </Styled.NavLink>
@@ -77,16 +74,8 @@ export default function Header() {
     </Styled.Header>
   );
 
-  function handleClick() {
-    stageSelectAudio();
-  }
-
   function handleKeyup(e) {
     if (e.key !== "Tab") return;
-    switchAudio();
-  }
-
-  function handleMouseEnter() {
-    state.userInteracted && switchAudio();
+    playSwitch();
   }
 }

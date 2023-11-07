@@ -10,7 +10,7 @@ export default function Posts() {
       <h2>Posts</h2>
       <Styled.Grid>
         {posts.map((post) => (
-          <Styled.Post key={post.id} href={`/blog/${post.slug}`}>
+          <Styled.Post key={post.id} to={`/blog/${post.slug}`}>
             <h3>{post.title}</h3>
             <Styled.Description>{post.excerpt}</Styled.Description>
           </Styled.Post>
