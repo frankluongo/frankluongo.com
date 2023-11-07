@@ -41,8 +41,9 @@ export const NavLink = styled(Link)`
   padding-block: 0.75rem;
 
   color: var(--color-text-alt);
-  font-weight: 900;
+  font-size: 0.75rem;
   font-style: italic;
+  font-weight: 900;
   text-decoration: none;
 
   &::before {
@@ -64,5 +65,9 @@ export const NavLink = styled(Link)`
 
   &:is(:focus, :hover)::before {
     opacity: 1;
+  }
+
+  @media (min-width: 700px) {
+    font-size: 1rem;
   }
 `;

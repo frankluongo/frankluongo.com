@@ -14,7 +14,7 @@ export const Container = styled(BaseContainer)``;
 export const Grid = styled.ul`
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 `;
 
 export const Heading = styled(Typography)`

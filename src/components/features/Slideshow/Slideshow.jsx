@@ -31,7 +31,7 @@ export default function Slideshow({ items }) {
         <Styled.ContentText>
           <blockquote>{currentItem.content}</blockquote>
           <Styled.ContentFooter>
-            <cite>{currentItem.author}&nbsp;|</cite>
+            <Styled.Citation>{currentItem.author}&nbsp;</Styled.Citation>
             <Styled.ContentLink
               href={currentItem.sourceUrl}
               target="_blank"

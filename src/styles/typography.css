@@ -13,16 +13,29 @@ a.alt {
 
 blockquote {
   color: var(--color-text-light);
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-style: italic;
   font-weight: 600;
   line-height: 1.6;
 }
 
+@media (min-width: 700px) {
+  blockquote {
+    font-size: 1rem;
+  }
+}
+
 cite {
   color: var(--color-text-lighter);
+  font-size: 0.75rem;
   font-style: italic;
   font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  cite {
+    font-size: 1rem;
+  }
 }
 
 h1 {

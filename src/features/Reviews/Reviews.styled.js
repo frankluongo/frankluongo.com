@@ -13,6 +13,12 @@ export const Background = styled.svg`
 export const Container = styled(BaseContainer)`
   position: relative;
   z-index: 2;
+
+  @media (max-width: 699.5px) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Reviews = styled.section`
