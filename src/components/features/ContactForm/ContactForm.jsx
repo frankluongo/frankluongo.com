@@ -27,6 +27,7 @@ export default function ContactForm() {
             Send
           </Button>
         </Styled.FormBlock>
+        <input type="hidden" name="form-name" value="contact" />
       </Styled.Form>
       {result && <p>{result}</p>}
     </Styled.Wrapper>
