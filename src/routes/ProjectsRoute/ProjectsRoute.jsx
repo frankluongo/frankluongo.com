@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Hero from "#features/Hero/Hero";
-import Highlights from "#features/Highlights/Highlights";
+import Highlights from "#lib/Highlights/Highlights";
 
 import useProjectsRoute from "./useProjectsRoute";
 
